@@ -36,14 +36,15 @@ public:
 	{
 		m_pos = pack.m_pos;
 		m_opCode = pack.m_opCode;
+		printf("world packet:code%d, %p\n", m_opCode, this);
 	}
 	
-/*	WorldPacket(std::vector<uint8_t> storage) : m_storage(storage), m_pos(0)
+	virtual ~WorldPacket()
 	{
-		m_opCode = ReadUShort();
-		m_pos = 0;
+		printf("------------------=DestoryPacket:%p\n", this);
+		//m_storage.clear();
 	}
-*/
+
 	uint16_t GetOpcode() const 
 	{
 		return m_opCode;
@@ -137,7 +138,6 @@ public:
 		if(m_storage.size() < HEAD_SIZE){
 			m_storage.resize(HEAD_SIZE);
 		}
-		printf("packet size:%d\n", (m_storage.size() - HEAD_SIZE + 2));
 		WriteUShort(htons(m_storage.size() - HEAD_SIZE + 2));
 		WriteUShort(m_opCode);
 	}
@@ -167,6 +167,7 @@ private:
 		{
 			skipTo(HEAD_SIZE);
 		}
+		printf("m_pos:%d, count:%d, m_storage.size():%d\n", m_pos, count, m_storage.size());
 		assert(m_pos + count <= m_storage.size());
 		memcpy(dst, &m_storage[m_pos], count);
 		m_pos += count;
@@ -182,16 +183,12 @@ private:
 static int CWorldPacket(lua_State* L)
 {
 	//取出构造函数参数
-	uint32_t opCode = lua_tointeger(L,1);
-	uint32_t size = lua_tointeger(L,2);
-	//创建一个CTest对象并把它的指针通过用户数据方式传递给lua
-	//这是对userdata的说明:
-	//A full userdata represents a block of memory. 
-	//It is an object (like a table): you must create it, it can have its own metatable
+	uint16_t opCode = luaL_checkinteger(L, 1);//lua_tointeger(L,1);
+	uint16_t size = luaL_checkinteger(L, 2);//lua_tointeger(L,2);
 	*(WorldPacket**)lua_newuserdata(L,sizeof(WorldPacket*)) = new WorldPacket(opCode, size);
-	//从注册表中找到CTest元表并压入栈顶
+	//从注册表中找到WorldPacket元表并压入栈顶
 	luaL_getmetatable(L, "WorldPacket");
-	//将CTest元表作为用户数据的元表(由于对函数还不熟悉,开始理解成把userdata赋给CTest呢，哈哈)
+	//将WorldPacket元表作为用户数据的元表
 	lua_setmetatable(L,-2);
 	//该函数调用后栈里就是一个userdata了。
 	return 1;
@@ -200,7 +197,7 @@ static int CWorldPacket(lua_State* L)
 
 static int CGetOpcode(lua_State * L)
 {
-	WorldPacket** pPack = (WorldPacket**)lua_touserdata(L, 1);
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");//(WorldPacket**)lua_touserdata(L, 1);
 	uint16_t code = (*pPack)->GetOpcode();
 	lua_pushnumber(L, code);
 	return 1;
@@ -208,36 +205,36 @@ static int CGetOpcode(lua_State * L)
 
 static int CWriteUInt(lua_State* L)
 {
-	WorldPacket** pT = (WorldPacket**)lua_touserdata(L,1);
-	uint32_t val = lua_tonumber(L, 2);
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
+	uint32_t val = luaL_checknumber(L, 2);
 	printf("CWriteUInt:%ld\n", val);
-	(*pT)->WriteUInt(val);
+	(*pPack)->WriteUInt(val);
 	return 0;
 }
 
 
 static int CWriteString(lua_State* L)
 {
-	WorldPacket** pT = (WorldPacket**)lua_touserdata(L,1);
-	const char * str = lua_tostring(L, 2);
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
+	const char * str = luaL_checkstring(L, 2);
 	printf("CWriteString:%s\n", str);
-	(*pT)->WriteString(str);
+	(*pPack)->WriteString(str);
 	return 0;
 }
 
 static int CWriteByte(lua_State* L)
 {
-	WorldPacket** pT = (WorldPacket**)lua_touserdata(L,1);
-	uint8_t val = lua_tonumber(L, 2);
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
+	uint8_t val = luaL_checknumber(L, 2);
 	printf("CWriteByte:%d\n", val);
-	(*pT)->WriteByte(val);
+	(*pPack)->WriteByte(val);
 	return 0;	
 }
 
 static int CReadUInt(lua_State* L)
 {
-	WorldPacket** pT = (WorldPacket**)lua_touserdata(L,1);
-	uint32_t val = (*pT)->ReadUInt();
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
+	uint32_t val = (*pPack)->ReadUInt();
 	printf("CReadUInt:%d\n", val);
 	lua_pushnumber(L, val);
 	return 1;
@@ -245,17 +242,17 @@ static int CReadUInt(lua_State* L)
 
 static int CReadUShort(lua_State* L)
 {
-	WorldPacket** pT = (WorldPacket**)lua_touserdata(L,1);
-	uint32_t val = (*pT)->ReadUShort();
-	printf("ReadUShort:%d\n", val);
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
+	uint32_t val = (*pPack)->ReadUShort();
+	printf("---ReadUShort:%d\n", val);
 	lua_pushnumber(L, val);
 	return 1;
 }
 
 static int CReadString(lua_State* L)
 {
-	WorldPacket** pT = (WorldPacket**)lua_touserdata(L,1);
-	std::string str = (*pT)->ReadString();
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
+	std::string str = (*pPack)->ReadString();
 	printf("CReadString:%s\n", str.c_str());
 	lua_pushstring(L, str.c_str());
 	return 1;
@@ -263,8 +260,8 @@ static int CReadString(lua_State* L)
 
 static int CReadByte(lua_State* L)
 {
-	WorldPacket** pT = (WorldPacket**)lua_touserdata(L,1);
-	int8_t byte = (*pT)->ReadByte();
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
+	int8_t byte = (*pPack)->ReadByte();
 	printf("CReadByte:%d\n", byte);
 	lua_pushnumber(L, byte);
 	return 1;
@@ -273,17 +270,20 @@ static int CReadByte(lua_State* L)
 static int CallPrint(lua_State* L)
 {
 	//这样才能给找到真正的对象
-	WorldPacket** pT = (WorldPacket**)lua_touserdata(L,1);
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	//WorldPacket** pV = (WorldPacket**)lua_touserdata(L,2);
 	//打印成员变量的值
-	(*pT)->print();
+	(*pPack)->print();
 	return 0;
 }
 
 static int DestoryPacket(lua_State* L)
 {
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
+	printf("-----------------DestoryPacket:%p\n", *pPack);
+	delete *pPack;
 	//释放对象
-	delete *(WorldPacket**)lua_touserdata(L,1);
+	//delete *(WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	return 0;
 }
 #endif

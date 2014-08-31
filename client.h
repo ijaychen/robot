@@ -10,6 +10,7 @@
 #include "./utility/world_packet.h"
 #include "./utility/circular_buffer.h"
 #include "./event/dispatcher.h"
+#include "./utility/log.h"
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -17,15 +18,19 @@
 class Client
 {
 public:
-	Client(lua_State * L) : m_pLuaState(L)
+	Client(lua_State * L, const char * accountName = "", const char * passwd = "")
+		: m_pLuaState(L)
 	{
-		printf("Client: %p\n", this);
-		m_ibuf = new CircularBuffer(0x10000);
-		m_obuf = new CircularBuffer(0x10000);
+		strcpy(m_accountName, accountName);
+		strcpy(m_passwd, passwd);
+		printf("%p, name:%s, passwd:%s\n", this, m_accountName, m_passwd);
+		m_ibuf = new CircularBuffer(0x4000);
+		m_obuf = new CircularBuffer(0x4000);
 	}
 
-	~Client()
+	virtual ~Client()
 	{
+		printf("~Client:%p\n", this);
 		if(m_ibuf)
 			delete m_ibuf;
 		if(m_obuf)
@@ -43,7 +48,7 @@ public:
 		assert(rc != -1);
 	}
 
-	void ConnectServer(const char * serverAddr, int nPort)
+	void ConnectServer(const char * serverAddr, int nPort, const char * serverName)
 	{
 		m_socket = socket(AF_INET, SOCK_STREAM, 0);
 		assert(-1 != m_socket);
@@ -54,17 +59,21 @@ public:
 		socklen_t len = sizeof(saddr);
 		int res = connect(m_socket, (sockaddr*)&saddr, len);
 		printf("connect result: %d\n", res);
-		assert(0 == res);
+		//assert(0 == res);
 		make_fd_nonblocking(m_socket);
 		AddToDispatcher(EPOLLIN);
+		SendLoginPacket(serverName);
 
-		WorldPacket pack1(15, 100);
-		//pack1.WriteString("l_linchao");
-		pack1.WriteString("l_chenjunji");
-		pack1.WriteString("qaz");
-		pack1.WriteString("123");
-		SendPacket(pack1);
+	}
 
+	void SendLoginPacket(const char * serverName)
+	{
+		WorldPacket pack(15, 100);
+		printf("--->>>>>>.%s %s %s\n", serverName, m_accountName, m_passwd);
+		pack.WriteString(serverName);
+		pack.WriteString(m_accountName);
+		pack.WriteString(m_passwd);
+		SendPacket(pack);
 	}
 	
 	void AddToDispatcher(int evt)
@@ -89,9 +98,9 @@ public:
 		assert(r == 0);
 	}
 	
-	void SendPacket(WorldPacket &pack)
+	void SendPacket(WorldPacket pack)
 	{
-		printf("----------------SendPacket\n");
+		printf("----------------SendPacket:%p\n", &pack);
 		pack.WriteHead();
 		size_t len = pack.GetSize();
 		m_obuf->Write((char*)pack.GetBuffer(), len);		
@@ -108,6 +117,7 @@ public:
 			m_obuf->Read(tmp, length);
 			
 			int res = send(m_socket, tmp, length, 0);
+			printf("%p: send res:%d\n", this, res);
 			for(int i = 0; i < length; ++i)
 			{
 				printf("%d ", tmp[i]);
@@ -149,8 +159,15 @@ public:
 		{
 			char buf[1024] = {0};
 			res = recv(m_socket, buf, 1024, 0);
-			if(res <= 0)
+			if(res < 0)
 				break;
+			if(0 == res)
+			{
+				char msg[128] = {0};
+				sprintf(msg, "server disconnected! socket:%d", m_socket);
+				debug_log(msg); 
+				break;
+			}
 			m_ibuf->Write(buf, res);
 			OnRecvPacket();
 		}
@@ -158,29 +175,19 @@ public:
 	
 	void ProcPacket(WorldPacket & pack)
 	{
-		
 		lua_getglobal(m_pLuaState, "c_procPacket");
 		*(Client**)lua_newuserdata(m_pLuaState,sizeof(Client*)) = this;
-		//从注册表中找到CTest元表并压入栈顶
 		luaL_getmetatable(m_pLuaState, "Client");
-		//将CTest元表作为用户数据的元表(由于对函数还不熟悉,开始理解成把userdata赋给CTest呢，哈哈)
 		lua_setmetatable(m_pLuaState,-2);
 
 		*(WorldPacket**)lua_newuserdata(m_pLuaState, sizeof(WorldPacket*)) = new WorldPacket(pack);
 		luaL_getmetatable(m_pLuaState, "WorldPacket");
 		lua_setmetatable(m_pLuaState, -2);
 		lua_pcall(m_pLuaState, 2, 0, 0);
-		/*
-		uint16_t opcode = pack.GetOpcode();
-		switch(opcode)
-		{
-			case 16:
-			{
-				printf("------proc packet:code:%d\n", opcode);
-				WorldPacket retpack(28, 10);
-				SendPacket(retpack);
-			}
-		}*/
+	}
+	const char * GetAccountName() const 
+	{
+		return m_accountName;
 	}
 private:
 	int m_socket;
@@ -188,31 +195,53 @@ private:
 	CircularBuffer *m_ibuf;
 	CircularBuffer *m_obuf;
 	lua_State * m_pLuaState;
+	char m_accountName[256];
+	char m_passwd[256];
 };
 
 static int LuaFClient(lua_State* L)
 {
-	*(Client**)lua_newuserdata(L,sizeof(Client*)) = new Client(L);
-	//从注册表中找到CTest元表并压入栈顶
+	const char * name = luaL_checkstring(L, 1);
+	const char * passwd = luaL_checkstring(L, 2);
+	*(Client**)lua_newuserdata(L,sizeof(Client*)) = new Client(L, name, passwd);
 	luaL_getmetatable(L, "Client");
-	//将CTest元表作为用户数据的元表(由于对函数还不熟悉,开始理解成把userdata赋给CTest呢，哈哈)
 	lua_setmetatable(L,-2);
-	//该函数调用后栈里就是一个userdata了。
+
 	return 0;	
 }
 
 static int LuaFSendPacket(lua_State * L)
 {
-	Client** pT = (Client**)lua_touserdata(L,1);
-	WorldPacket** pV = (WorldPacket**)lua_touserdata(L,2);
-	//打印成员变量的值
-	(*pT)->SendPacket(**pV);
+	Client** pClient = (Client**)luaL_checkudata(L, 1, "Client");
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 2, "WorldPacket");
+	(*pClient)->SendPacket(**pPack);
 	return 0;
+}
+
+static int LuaFConnectServer(lua_State * L)
+{
+	Client** pClient = (Client**)luaL_checkudata(L, 1, "Client");
+	const char * ip = luaL_checkstring(L, 2);
+	int port = luaL_checknumber(L, 3);
+	const char * serverName = luaL_checkstring(L, 4);
+	char msg[128] = {0};
+	sprintf(msg, "serverIp:%s, port:%d", ip, port);
+	debug_log(msg);
+	debug_log(serverName);
+	(*pClient)->ConnectServer(ip, port, serverName);
+	return 1;
+}
+
+static int LuaFGetAccountName(lua_State * L)
+{
+	Client** pClient = (Client**)luaL_checkudata(L, 1, "Client");
+	lua_pushstring(L, (*pClient)->GetAccountName());
+	return 1;
 }
 
 static int DestoryClient(lua_State* L)
 {
-	//释放对象
+	debug_log("-------------->>>>>>>>>>>>>>>>DestoryClient");
 	delete *(Client**)lua_touserdata(L,1);
 	return 0;
 }

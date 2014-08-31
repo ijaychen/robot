@@ -3,68 +3,80 @@
 #include "./utility/get_lua_file.h"
 #include "./event/dispatcher.h"
 #include "./utility/config.h"
+#include "./utility/log.h"
+#include "init.h"
+#include <unistd.h>
+#include <signal.h>
+#include <stdlib.h>
 
-extern char g_serverName[];
+void exit_signal_handle(int sig);
 
-static lua_State * initLuaState()
-{
-	lua_State * L = luaL_newstate();
-	luaL_openlibs(L);
-	LuaRegister luaReg(L);
-	
-	luaReg.SetObjName("WorldPacket");
-	luaReg.RegCObjConstruct(CWorldPacket);
-	luaReg.RegCObjDesConstruct(DestoryPacket);
-	luaReg.RegMemFunction("GetOpcode", CGetOpcode);
-	luaReg.RegMemFunction("WriteString", CWriteString);
-	luaReg.RegMemFunction("WriteUInt", CWriteUInt);
-	luaReg.RegMemFunction("WriteByte", CWriteByte);
-	luaReg.RegMemFunction("ReadString", CReadString);
-	luaReg.RegMemFunction("ReadUInt", CReadUInt);
-	luaReg.RegMemFunction("ReadUShort", CReadUShort);
-	luaReg.RegMemFunction("ReadByte", CReadByte);
-	luaReg.RegMemFunction("Print", CallPrint);
-	
-	luaReg.SetObjName("Client");
-	luaReg.RegCObjConstruct(LuaFClient);
-	luaReg.RegCObjDesConstruct(DestoryClient);
-	luaReg.RegMemFunction("SendPacket", LuaFSendPacket);
-	
-	return L;
-}
-
-static void loadLuaScripts(lua_State * L)
-{
-	std::vector<std::string> filename;
-	get_lua_file(filename, "./scripts");
-	std::vector<std::string>::iterator iter = filename.begin();
-	printf("----------lua file list---------------\n");
-	for(iter; iter != filename.end(); ++iter)
-	{
-		if(luaL_loadfile(L, (*iter).c_str()) || lua_pcall(L, 0, 0, 0))
-		{
-			printf("lua load file error\n");
-			return;
-		}
-		printf("%s\n", (*iter).c_str());
-	}
-	printf("----------lua file list---------------\n");
-}
+lua_State * L; 
+Client ** cln = 0;
+int max_client = 0;
 
 int main()
 {
-	lua_State * L  = initLuaState();
-	loadLuaScripts(L);
-	Config config(L);
-	const char * server_name = config.GetServerName();
-	int server_port = config.GetServerPort();
-	int max_client = config.GetMaxClient();
-	printf("server name:%s, port:%d\n", server_name, server_port);
-	printf("max client count:%d\n", max_client);
-	Client cln(L);
-	//cln.ConnectServer("127.0.0.1", 6739);
-	//cln.ConnectServer("127.0.0.1", 12736);
-	//g_dispatcher->Dispatch();
-	lua_close(L);
+	L = init_lua_state();
+	//读取配置文件(一定要放在所有加载文件之前)
+	Config * g_config = Config::GetInstance();
+	//加载scripts目录下所以lua文件
+	load_lua_scripts(L);
+	//加载scripts/csv目录下所有csv文件
+	load_csv_by_lua(L);
+	//注册ctrl+c信号处理函数
+	signal(SIGINT, exit_signal_handle);
+	//init_robot_by_lua(L);
+	const char * server_name = g_config->GetServerName();
+	int server_port = g_config->GetServerPort();
+	max_client = g_config->GetMaxClient();
+	char msg[256] = {0};
+	sprintf(msg, "server name:%s, port:%d\tclient count:%d\n", server_name, server_port, max_client);
+	debug_log(msg);
+	cln = new Client*[max_client];
+	for(int i = 0; i < max_client; ++i)
+	{
+		char clnName[128] = {0};
+		sprintf(clnName, "qaz%d", i);
+		cln[i] = new Client(L, clnName, "1");
+		cln[i]->ConnectServer("192.168.1.100", server_port, server_name);
+		printf("---------%s-------\n", cln[i]->GetAccountName());
+	}
+	while(1){
+	WorldPacket pack_test(31, 10);
+	pack_test.WriteUShort(0);
+	pack_test.WriteHead();
+	pack_test.skipTo(0);
+	lua_getglobal(L, "c_procPacket");
+		*(Client**)lua_newuserdata(L,sizeof(Client*)) = cln[0];
+		luaL_getmetatable(L, "Client");
+		lua_setmetatable(L,-2);
+
+		*(WorldPacket**)lua_newuserdata(L, sizeof(WorldPacket*)) = new WorldPacket(pack_test);
+		luaL_getmetatable(L, "WorldPacket");
+		lua_setmetatable(L, -2);
+		if(lua_pcall(L, 2, 0, 0))
+		{
+			debug_log(lua_tostring(L, -1), log_error); 
+		}
+}
+	g_dispatcher->Dispatch();
 	return 0;
+}
+
+
+
+
+
+void exit_signal_handle(int sig)
+{
+	for(int i = 0; i < max_client; ++i)
+	{
+		if(cln[i])
+		{
+			delete cln[i];
+		}
+	}
+	lua_close(L);
+	exit(0);
 }

@@ -6,20 +6,18 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <string>
 #include <string.h>
-#include "log.h"
+
+extern lua_State * L; 
 
 class Config
 {
 public:
-	Config(lua_State * L, const char * config_file = "./config.lua") 
-		: m_pLuaState(L)
+	static Config * GetInstance(const char * config_file = "./config.lua")
 	{
-		if(luaL_loadfile(L, config_file) || lua_pcall(L, 0,0,0))
-		{
-			debug_log(lua_tostring(L, -1), "ERROR");
-			assert(false);
-		}
+		static Config _instance(L, config_file);
+		return &_instance;
 	}
 
 	const char * GetServerName(){
@@ -44,7 +42,24 @@ public:
 		lua_pop(m_pLuaState, 1);
 		return m_maxClient;
 	}
-
+	
+	int GetLogLevel()
+	{
+		lua_getglobal(m_pLuaState, "log_level");
+		int level = lua_tonumber(m_pLuaState, 1);
+		lua_pop(m_pLuaState, 1);
+		return level;
+	}
+private:
+	Config(lua_State * L, const char * config_file) 
+		: m_pLuaState(L)
+	{
+		if(luaL_loadfile(L, config_file) || lua_pcall(L, 0,0,0))
+		{
+			printf("%s\n",lua_tostring(L, -1));
+			assert(false);
+		}
+	}
 private:
 	lua_State * m_pLuaState;
 	char m_serverName[256];

@@ -34,7 +34,7 @@ private:
 	int m_nWaitTime;
 	int m_epfd;
 	
-	const static int MAX_EVENT_SIZE = 256;
+	const static int MAX_EVENT_SIZE = 512;
 	epoll_event m_events[MAX_EVENT_SIZE];
 	std::map<int, Client*> m_event_io_list;
 };

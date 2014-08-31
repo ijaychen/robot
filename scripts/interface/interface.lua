@@ -6,6 +6,6 @@ function c_procPacket(plr, pack)
 	if handle and pack then
 		handle(plr, pack)
 	else
-		--print("opcode, handle & pack", opcode, handle, pack);
+		print("opcode, handle & pack", opcode, handle, pack);
 	end
 end

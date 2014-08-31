@@ -1,0 +1,32 @@
+INFO:	----------lua file list---------------
+
+INFO:	./scripts/include/csv.lua
+INFO:	./scripts/include/print_r.lua
+----------------break------------------
+INFO:	./scripts/include/sizet.lua
+INFO:	./scripts/include/csvLoader.lua
+INFO:	./scripts/include/options.lua
+INFO:	./scripts/include/printXX.lua
+INFO:	./scripts/include/opcodes.lua
+INFO:	./scripts/interface/interface.lua
+INFO:	./scripts/interface/loginHandle.lua
+INFO:	----------lua file list---------------
+
+Hero.csv	HeroCSV	nil
+clientList.csv	clientList	nil
+INFO:	server name:l_chenjunji, port:12736	client count:1
+
+0x9396500, name:qaz0, passwd:1
+connect result: 0
+world packet:code15, 0xbfb93e40
+--->>>>>>.l_chenjunji qaz0 1
+world packet:code15, 0xbfb93e58
+----------------SendPacket:0xbfb93e58
+------------------=DestoryPacket:0xbfb93e58
+------------------=DestoryPacket:0xbfb93e40
+---------qaz0-------
+client event writeable
+-----------------event writeable
+0x9396500: send res:26
+0 24 15 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 48 1 0 49 
+~Client:0x9396500
