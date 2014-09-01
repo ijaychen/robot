@@ -27,6 +27,7 @@ int main()
 	//注册ctrl+c信号处理函数
 	signal(SIGINT, exit_signal_handle);
 	//init_robot_by_lua(L);
+	//const char * server_addr = g_config->GetServerAddr();
 	const char * server_name = g_config->GetServerName();
 	int server_port = g_config->GetServerPort();
 	max_client = g_config->GetMaxClient();
@@ -39,10 +40,9 @@ int main()
 		char clnName[128] = {0};
 		sprintf(clnName, "qaz%d", i);
 		cln[i] = new Client(L, clnName, "1");
-		cln[i]->ConnectServer("192.168.1.100", server_port, server_name);
-		printf("---------%s-------\n", cln[i]->GetAccountName());
+		cln[i]->ConnectLoginServer("127.0.0.1", server_port, server_name);
 	}
-	while(1){
+	/*while(1){
 	WorldPacket pack_test(31, 10);
 	pack_test.WriteUShort(0);
 	pack_test.WriteHead();
@@ -59,7 +59,7 @@ int main()
 		{
 			debug_log(lua_tostring(L, -1), log_error); 
 		}
-}
+}*/
 	g_dispatcher->Dispatch();
 	return 0;
 }

@@ -27,6 +27,8 @@ static lua_State * init_lua_state()
 	luaReg.RegMemFunction("ReadUShort", CReadUShort);
 	luaReg.RegMemFunction("ReadByte", CReadByte);
 	luaReg.RegMemFunction("Print", CallPrint);
+	luaReg.RegMemFunction("GetSize", CGetSize);
+	
 	
 	luaReg.SetObjName("Client");
 	luaReg.RegCObjConstruct(LuaFClient);
@@ -34,7 +36,8 @@ static lua_State * init_lua_state()
 	luaReg.RegMemFunction("SendPacket", LuaFSendPacket);
 	luaReg.RegMemFunction("ConnectServer", LuaFConnectServer);
 	luaReg.RegMemFunction("GetAccountName", LuaFGetAccountName);
-	
+	luaReg.RegMemFunction("ConnectGameServer", LuaFConnectGameServer);
+	luaReg.RegMemFunction("DisConnectLoginServer", LuaFDisConnectLoginServer);
 	return L;
 }
 

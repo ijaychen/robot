@@ -46,11 +46,9 @@ void Dispatcher::Dispatch()
 			{
 				Client * evobj = static_cast<Client*>(m_events[i].data.ptr);
 				if((m_events[i].events & EPOLLIN) | (m_events[i].events & EPOLLERR)){
-					printf("client event readable\n");
 					evobj->OnEventReadable();
 				}
 				if(m_events[i].events & EPOLLOUT){
-					printf("client event writeable\n");
 					evobj->OnEventWriteable();
 				}
 			}

@@ -25,7 +25,6 @@ public:
 	
 	WorldPacket(uint16_t opCode, uint16_t size)
 	{
-		printf("world packet:code%d, %p\n", opCode, this);
 		m_pos = 0;
 		m_storage.reserve(size);
 		m_opCode = opCode;
@@ -36,12 +35,10 @@ public:
 	{
 		m_pos = pack.m_pos;
 		m_opCode = pack.m_opCode;
-		printf("world packet:code%d, %p\n", m_opCode, this);
 	}
 	
 	virtual ~WorldPacket()
 	{
-		printf("------------------=DestoryPacket:%p\n", this);
 		//m_storage.clear();
 	}
 
@@ -167,8 +164,12 @@ private:
 		{
 			skipTo(HEAD_SIZE);
 		}
-		printf("m_pos:%d, count:%d, m_storage.size():%d\n", m_pos, count, m_storage.size());
-		assert(m_pos + count <= m_storage.size());
+		//assert(m_pos + count <= m_storage.size());
+		if(m_pos + count <= m_storage.size())
+		{
+			char ch = 0;
+			memcpy(dst, &ch, count);
+		}
 		memcpy(dst, &m_storage[m_pos], count);
 		m_pos += count;
 	}
@@ -207,7 +208,7 @@ static int CWriteUInt(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	uint32_t val = luaL_checknumber(L, 2);
-	printf("CWriteUInt:%ld\n", val);
+	//printf("CWriteUInt:%ld\n", val);
 	(*pPack)->WriteUInt(val);
 	return 0;
 }
@@ -235,7 +236,7 @@ static int CReadUInt(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	uint32_t val = (*pPack)->ReadUInt();
-	printf("CReadUInt:%d\n", val);
+	//printf("CReadUInt:%ld\n", val);
 	lua_pushnumber(L, val);
 	return 1;
 }
@@ -244,7 +245,7 @@ static int CReadUShort(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	uint32_t val = (*pPack)->ReadUShort();
-	printf("---ReadUShort:%d\n", val);
+	printf("ReadUShort:%d\n", val);
 	lua_pushnumber(L, val);
 	return 1;
 }
@@ -253,7 +254,7 @@ static int CReadString(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	std::string str = (*pPack)->ReadString();
-	printf("CReadString:%s\n", str.c_str());
+	//printf("CReadString:%s\n", str.c_str());
 	lua_pushstring(L, str.c_str());
 	return 1;
 }
@@ -262,7 +263,7 @@ static int CReadByte(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	int8_t byte = (*pPack)->ReadByte();
-	printf("CReadByte:%d\n", byte);
+	//printf("CReadByte:%d\n", byte);
 	lua_pushnumber(L, byte);
 	return 1;
 }
@@ -277,10 +278,17 @@ static int CallPrint(lua_State* L)
 	return 0;
 }
 
+static int CGetSize(lua_State * L)
+{
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
+	int size = (*pPack)->GetSize();
+	lua_pushnumber(L, size - 2);
+	return 1;
+}
+
 static int DestoryPacket(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
-	printf("-----------------DestoryPacket:%p\n", *pPack);
 	delete *pPack;
 	//释放对象
 	//delete *(WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");

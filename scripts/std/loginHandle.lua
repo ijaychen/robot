@@ -1,4 +1,4 @@
-
+--[[
 local function handleSmsgLoginUser(plr, pack)
 	print("--------------------------SMSG_LOGIN_USER")
 	local pack = WorldPacket(opCodes.C2L_ROLE_LIST, 10)
@@ -59,3 +59,4 @@ local function handleRoleSelect(plr, pack)
 	plr:SendPacket(pack)
 end
 packetHandler[opCodes.L2C_ROLE_SELECT] = handleRoleSelect
+--]]

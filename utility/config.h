@@ -19,6 +19,13 @@ public:
 		static Config _instance(L, config_file);
 		return &_instance;
 	}
+	const char * GetServerAddr()
+	{
+		lua_getglobal(m_pLuaState, "g_serverAddr");
+		strcpy(m_serverAddr, lua_tostring(m_pLuaState, 1));
+		lua_pop(m_pLuaState, 1);
+		return m_serverAddr;
+	}
 
 	const char * GetServerName(){
 		lua_getglobal(m_pLuaState, "g_serverName");
@@ -62,6 +69,7 @@ private:
 	}
 private:
 	lua_State * m_pLuaState;
+	char m_serverAddr[256];
 	char m_serverName[256];
 	int m_serverPort;
 	size_t m_maxClient;

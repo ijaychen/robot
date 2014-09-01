@@ -1,32 +1,3908 @@
 INFO:	----------lua file list---------------
 
-INFO:	./scripts/include/csv.lua
-INFO:	./scripts/include/print_r.lua
+INFO:	./scripts/include/opcodes.lua
+INFO:	./scripts/include/printXX.lua
+INFO:	./scripts/include/csvLoader.lua
 ----------------break------------------
 INFO:	./scripts/include/sizet.lua
-INFO:	./scripts/include/csvLoader.lua
+INFO:	./scripts/include/csv.lua
 INFO:	./scripts/include/options.lua
-INFO:	./scripts/include/printXX.lua
-INFO:	./scripts/include/opcodes.lua
-INFO:	./scripts/interface/interface.lua
+INFO:	./scripts/include/print_r.lua
 INFO:	./scripts/interface/loginHandle.lua
+INFO:	./scripts/interface/interface.lua
+INFO:	./scripts/interface/roleHandle.lua
+INFO:	./scripts/std/loginsession.lua
+INFO:	./scripts/std/loginHandle.lua
 INFO:	----------lua file list---------------
 
 Hero.csv	HeroCSV	nil
 clientList.csv	clientList	nil
-INFO:	server name:l_chenjunji, port:12736	client count:1
+INFO:	server name:l_chenjunji, port:12736	client count:6
 
-0x9396500, name:qaz0, passwd:1
+0x6e6a50, name:qaz0, passwd:1
 connect result: 0
-world packet:code15, 0xbfb93e40
 --->>>>>>.l_chenjunji qaz0 1
-world packet:code15, 0xbfb93e58
-----------------SendPacket:0xbfb93e58
-------------------=DestoryPacket:0xbfb93e58
-------------------=DestoryPacket:0xbfb93e40
+----------------SendPacket:0x7fffa0618550
 ---------qaz0-------
+0x6cdf60, name:qaz1, passwd:1
+connect result: 0
+--->>>>>>.l_chenjunji qaz1 1
+----------------SendPacket:0x7fffa0618550
+---------qaz1-------
+0x6ea740, name:qaz2, passwd:1
+connect result: 0
+--->>>>>>.l_chenjunji qaz2 1
+----------------SendPacket:0x7fffa0618550
+---------qaz2-------
+0x6e82b0, name:qaz3, passwd:1
+connect result: 0
+--->>>>>>.l_chenjunji qaz3 1
+----------------SendPacket:0x7fffa0618550
+---------qaz3-------
+0x6eb700, name:qaz4, passwd:1
+connect result: 0
+--->>>>>>.l_chenjunji qaz4 1
+----------------SendPacket:0x7fffa0618550
+---------qaz4-------
+0x6ed230, name:qaz5, passwd:1
+connect result: 0
+--->>>>>>.l_chenjunji qaz5 1
+----------------SendPacket:0x7fffa0618550
+---------qaz5-------
 client event writeable
 -----------------event writeable
-0x9396500: send res:26
+0x6e6a50: send res:26
 0 24 15 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 48 1 0 49 
-~Client:0x9396500
+client event writeable
+-----------------event writeable
+0x6cdf60: send res:26
+0 24 15 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 49 1 0 49 
+client event writeable
+-----------------event writeable
+0x6ea740: send res:26
+0 24 15 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 50 1 0 49 
+client event writeable
+-----------------event writeable
+0x6e82b0: send res:26
+0 24 15 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 51 1 0 49 
+client event writeable
+-----------------event writeable
+0x6eb700: send res:26
+0 24 15 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 52 1 0 49 
+client event writeable
+-----------------event writeable
+0x6ed230: send res:26
+0 24 15 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 53 1 0 49 
+client event readable
+INFO:	------------------recv res:28!
+length:28, headSize:4
+------OnRecvPacket--SoftRead------, buf length:28, packet size:26
+------------------------c_procPacket	16
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6ed230: send res:4
+0 2 30 0 
+client event readable
+INFO:	------------------recv res:28!
+length:28, headSize:4
+------OnRecvPacket--SoftRead------, buf length:28, packet size:26
+------------------------c_procPacket	16
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:28!
+length:28, headSize:4
+------OnRecvPacket--SoftRead------, buf length:28, packet size:26
+------------------------c_procPacket	16
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6e82b0: send res:4
+0 2 30 0 
+client event writeable
+-----------------event writeable
+0x6eb700: send res:4
+0 2 30 0 
+client event readable
+INFO:	------------------recv res:28!
+length:28, headSize:4
+------OnRecvPacket--SoftRead------, buf length:28, packet size:26
+------------------------c_procPacket	16
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6cdf60: send res:4
+0 2 30 0 
+client event readable
+INFO:	------------------recv res:28!
+length:28, headSize:4
+------OnRecvPacket--SoftRead------, buf length:28, packet size:26
+------------------------c_procPacket	16
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6e6a50: send res:4
+0 2 30 0 
+client event readable
+INFO:	------------------recv res:28!
+length:28, headSize:4
+------OnRecvPacket--SoftRead------, buf length:28, packet size:26
+------------------------c_procPacket	16
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6ea740: send res:4
+0 2 30 0 
+client event readable
+INFO:	------------------recv res:29!
+length:29, headSize:4
+------OnRecvPacket--SoftRead------, buf length:29, packet size:27
+------------------------c_procPacket	31
+---------handleRoleList---------
+ReadUShort:1
+----------------count:	1
+CReadUInt:4008000295
+CReadString:MU
+CReadString:
+CReadString:qaz5
+CReadByte:4
+ReadUShort:1
+CReadUInt:1
+L2C_ROLE_LIST	4008000295
+CWriteUInt:4008000295
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6ed230: send res:8
+0 6 28 0 39 59 -27 -18 
+client event readable
+INFO:	------------------recv res:30!
+length:30, headSize:4
+------OnRecvPacket--SoftRead------, buf length:30, packet size:28
+------------------------c_procPacket	31
+---------handleRoleList---------
+ReadUShort:1
+----------------count:	1
+CReadUInt:4008000296
+CReadString:MZ
+CReadString:
+CReadString:qaz3
+CReadByte:2
+ReadUShort:0
+CReadUInt:1
+L2C_ROLE_LIST	4008000296
+CWriteUInt:4008000296
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6e82b0: send res:8
+0 6 28 0 40 59 -27 -18 
+client event readable
+INFO:	------------------recv res:30!
+length:30, headSize:4
+------OnRecvPacket--SoftRead------, buf length:30, packet size:28
+------------------------c_procPacket	31
+---------handleRoleList---------
+ReadUShort:1
+----------------count:	1
+CReadUInt:4008000294
+CReadString:MR
+CReadString:
+CReadString:qaz4
+CReadByte:3
+ReadUShort:1
+CReadUInt:1
+L2C_ROLE_LIST	4008000294
+CWriteUInt:4008000294
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6eb700: send res:8
+0 6 28 0 38 59 -27 -18 
+client event readable
+INFO:	------------------recv res:30!
+length:30, headSize:4
+------OnRecvPacket--SoftRead------, buf length:30, packet size:28
+------------------------c_procPacket	31
+---------handleRoleList---------
+ReadUShort:1
+----------------count:	1
+CReadUInt:4008000292
+CReadString:MK
+CReadString:
+CReadString:qaz1
+CReadByte:1
+ReadUShort:1
+CReadUInt:1
+L2C_ROLE_LIST	4008000292
+CWriteUInt:4008000292
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6cdf60: send res:8
+0 6 28 0 36 59 -27 -18 
+client event readable
+INFO:	------------------recv res:39!
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	31
+---------handleRoleList---------
+ReadUShort:1
+----------------count:	1
+CReadUInt:4008000291
+CReadString:坦娜鹰斧
+CReadString:
+CReadString:qaz0
+CReadByte:4
+ReadUShort:1
+CReadUInt:1
+L2C_ROLE_LIST	4008000291
+CWriteUInt:4008000291
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6e6a50: send res:8
+0 6 28 0 35 59 -27 -18 
+client event readable
+INFO:	------------------recv res:39!
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	31
+---------handleRoleList---------
+ReadUShort:1
+----------------count:	1
+CReadUInt:4008000293
+CReadString:丽芙摩尔
+CReadString:
+CReadString:qaz2
+CReadByte:4
+ReadUShort:1
+CReadUInt:1
+L2C_ROLE_LIST	4008000293
+CWriteUInt:4008000293
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6ea740: send res:8
+0 6 28 0 37 59 -27 -18 
+client event readable
+INFO:	------------------recv res:61!
+length:61, headSize:4
+------OnRecvPacket--SoftRead------, buf length:61, packet size:59
+------------------------c_procPacket	29
+ReadUShort:0
+CReadString:192.168.16.90
+ReadUShort:12736
+CReadString:cdf6cfce9cade5afe4e70372db8de2f4
+0	192.168.16.90	12736	cdf6cfce9cade5afe4e70372db8de2f4
+CWriteString:l_chenjunji
+CWriteString:qaz5
+CWriteString:cdf6cfce9cade5afe4e70372db8de2f4
+CWriteString:2.2.0.0
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6ed230: send res:66
+0 64 11 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 53 32 0 99 100 102 54 99 102 99 101 57 99 97 100 101 53 97 102 101 52 101 55 48 51 55 50 100 98 56 100 101 50 102 52 7 0 50 46 50 46 48 46 48 
+client event readable
+INFO:	------------------recv res:61!
+length:61, headSize:4
+------OnRecvPacket--SoftRead------, buf length:61, packet size:59
+------------------------c_procPacket	29
+ReadUShort:0
+CReadString:192.168.16.90
+ReadUShort:12736
+CReadString:3baeefcc0a71ed7b19da0e2b9257b5fd
+0	192.168.16.90	12736	3baeefcc0a71ed7b19da0e2b9257b5fd
+CWriteString:l_chenjunji
+CWriteString:qaz3
+CWriteString:3baeefcc0a71ed7b19da0e2b9257b5fd
+CWriteString:2.2.0.0
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:61!
+length:61, headSize:4
+------OnRecvPacket--SoftRead------, buf length:61, packet size:59
+------------------------c_procPacket	29
+ReadUShort:0
+CReadString:192.168.16.90
+ReadUShort:12736
+CReadString:1485ddac1a4a78b0374c7a23a23da7c6
+0	192.168.16.90	12736	1485ddac1a4a78b0374c7a23a23da7c6
+CWriteString:l_chenjunji
+CWriteString:qaz4
+CWriteString:1485ddac1a4a78b0374c7a23a23da7c6
+CWriteString:2.2.0.0
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6e82b0: send res:66
+0 64 11 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 51 32 0 51 98 97 101 101 102 99 99 48 97 55 49 101 100 55 98 49 57 100 97 48 101 50 98 57 50 53 55 98 53 102 100 7 0 50 46 50 46 48 46 48 
+client event writeable
+-----------------event writeable
+0x6eb700: send res:66
+0 64 11 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 52 32 0 49 52 56 53 100 100 97 99 49 97 52 97 55 56 98 48 51 55 52 99 55 97 50 51 97 50 51 100 97 55 99 54 7 0 50 46 50 46 48 46 48 
+client event readable
+INFO:	------------------recv res:61!
+length:61, headSize:4
+------OnRecvPacket--SoftRead------, buf length:61, packet size:59
+------------------------c_procPacket	29
+ReadUShort:0
+CReadString:192.168.16.90
+ReadUShort:12736
+CReadString:1900e9c49daf97b0e56f22bdac3305e5
+0	192.168.16.90	12736	1900e9c49daf97b0e56f22bdac3305e5
+CWriteString:l_chenjunji
+CWriteString:qaz1
+CWriteString:1900e9c49daf97b0e56f22bdac3305e5
+CWriteString:2.2.0.0
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6cdf60: send res:66
+0 64 11 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 49 32 0 49 57 48 48 101 57 99 52 57 100 97 102 57 55 98 48 101 53 54 102 50 50 98 100 97 99 51 51 48 53 101 53 7 0 50 46 50 46 48 46 48 
+client event readable
+INFO:	------------------recv res:61!
+length:61, headSize:4
+------OnRecvPacket--SoftRead------, buf length:61, packet size:59
+------------------------c_procPacket	29
+ReadUShort:0
+CReadString:192.168.16.90
+ReadUShort:12736
+CReadString:1b985db92e4cdaf10e9e25e8e50b4903
+0	192.168.16.90	12736	1b985db92e4cdaf10e9e25e8e50b4903
+CWriteString:l_chenjunji
+CWriteString:qaz0
+CWriteString:1b985db92e4cdaf10e9e25e8e50b4903
+CWriteString:2.2.0.0
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6e6a50: send res:66
+0 64 11 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 48 32 0 49 98 57 56 53 100 98 57 50 101 52 99 100 97 102 49 48 101 57 101 50 53 101 56 101 53 48 98 52 57 48 51 7 0 50 46 50 46 48 46 48 
+client event readable
+INFO:	------------------recv res:61!
+length:61, headSize:4
+------OnRecvPacket--SoftRead------, buf length:61, packet size:59
+------------------------c_procPacket	29
+ReadUShort:0
+CReadString:192.168.16.90
+ReadUShort:12736
+CReadString:2c818787c819b5e3fd3e8d9d00157ccb
+0	192.168.16.90	12736	2c818787c819b5e3fd3e8d9d00157ccb
+CWriteString:l_chenjunji
+CWriteString:qaz2
+CWriteString:2c818787c819b5e3fd3e8d9d00157ccb
+CWriteString:2.2.0.0
+----------------SendPacket:0x7fffa0617c90
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event writeable
+-----------------event writeable
+0x6ea740: send res:66
+0 64 11 0 11 0 108 95 99 104 101 110 106 117 110 106 105 4 0 113 97 122 50 32 0 50 99 56 49 56 55 56 55 99 56 49 57 98 53 101 51 102 100 51 101 56 100 57 100 48 48 49 53 55 99 99 98 7 0 50 46 50 46 48 46 48 
+client event readable
+INFO:	------------------recv res:10!
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	12
+opcode, handle & pack	12	nil	userdata: 0x6d1208
+INFO:	------------------recv res:8!
+length:8, headSize:4
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6219
+opcode, handle & pack	6219	nil	userdata: 0x6cf718
+INFO:	------------------recv res:14!
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:6
+------------------------c_procPacket	134
+opcode, handle & pack	134	nil	userdata: 0x6e51e8
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	3503
+opcode, handle & pack	3503	nil	userdata: 0x6eb998
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:10!
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	12
+opcode, handle & pack	12	nil	userdata: 0x6ef018
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:16!
+length:16, headSize:4
+------OnRecvPacket--SoftRead------, buf length:16, packet size:6
+------------------------c_procPacket	6219
+opcode, handle & pack	6219	nil	userdata: 0x6f3ff8
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	134
+opcode, handle & pack	134	nil	userdata: 0x6d9e28
+INFO:	------------------recv res:6!
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	3503
+opcode, handle & pack	3503	nil	userdata: 0x6f9038
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:12!
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:10
+------------------------c_procPacket	6010
+opcode, handle & pack	6010	nil	userdata: 0x6c93f8
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:51!
+length:51, headSize:4
+------OnRecvPacket--SoftRead------, buf length:51, packet size:49
+------------------------c_procPacket	607
+opcode, handle & pack	607	nil	userdata: 0x6e3b68
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:10!
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	12
+opcode, handle & pack	12	nil	userdata: 0x6f4198
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:8!
+length:8, headSize:4
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6219
+opcode, handle & pack	6219	nil	userdata: 0x707338
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:8!
+length:8, headSize:4
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	134
+opcode, handle & pack	134	nil	userdata: 0x709b58
+INFO:	------------------recv res:6!
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	3503
+opcode, handle & pack	3503	nil	userdata: 0x70c378
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:12!
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:10
+------------------------c_procPacket	53
+CReadUInt:4001010
+ReadUShort:24
+ReadUShort:24
+4001010
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:39!
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6d12d8
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:39!
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6db6a8
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:57!
+length:57, headSize:4
+------OnRecvPacket--SoftRead------, buf length:57, packet size:55
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6cbc48
+INFO:	------------------recv res:39!
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6edfb8
+INFO:	------------------recv res:39!
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6f1648
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:479!
+length:479, headSize:4
+------OnRecvPacket--SoftRead------, buf length:479, packet size:477
+------------------------c_procPacket	51
+opcode, handle & pack	51	nil	userdata: 0x6f4848
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:144!
+length:144, headSize:4
+------OnRecvPacket--SoftRead------, buf length:144, packet size:142
+------------------------c_procPacket	801
+opcode, handle & pack	801	nil	userdata: 0x6fb4f8
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:77!
+length:77, headSize:4
+------OnRecvPacket--SoftRead------, buf length:77, packet size:75
+------------------------c_procPacket	6001
+opcode, handle & pack	6001	nil	userdata: 0x702088
+INFO:	------------------recv res:6!
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	201
+opcode, handle & pack	201	nil	userdata: 0x703c28
+INFO:	------------------recv res:26!
+length:26, headSize:4
+------OnRecvPacket--SoftRead------, buf length:26, packet size:4
+------------------------c_procPacket	204
+opcode, handle & pack	204	nil	userdata: 0x705078
+------OnRecvPacket--SoftRead------, buf length:20, packet size:18
+------------------------c_procPacket	212
+opcode, handle & pack	212	nil	userdata: 0x706488
+INFO:	------------------recv res:6!
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	223
+opcode, handle & pack	223	nil	userdata: 0x707898
+INFO:	------------------recv res:46!
+length:46, headSize:4
+------OnRecvPacket--SoftRead------, buf length:46, packet size:44
+------------------------c_procPacket	601
+opcode, handle & pack	601	nil	userdata: 0x709f68
+INFO:	------------------recv res:6!
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	602
+opcode, handle & pack	602	nil	userdata: 0x70b338
+INFO:	------------------recv res:20!
+length:20, headSize:4
+------OnRecvPacket--SoftRead------, buf length:20, packet size:12
+------------------------c_procPacket	3403
+opcode, handle & pack	3403	nil	userdata: 0x70c748
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	615
+opcode, handle & pack	615	nil	userdata: 0x6d1958
+INFO:	------------------recv res:114!
+length:114, headSize:4
+------OnRecvPacket--SoftRead------, buf length:114, packet size:104
+------------------------c_procPacket	870
+opcode, handle & pack	870	nil	userdata: 0x6f3f88
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	1632
+opcode, handle & pack	1632	nil	userdata: 0x6f6148
+INFO:	------------------recv res:13!
+length:13, headSize:4
+------OnRecvPacket--SoftRead------, buf length:13, packet size:6
+------------------------c_procPacket	124
+opcode, handle & pack	124	nil	userdata: 0x6d17e8
+------OnRecvPacket--SoftRead------, buf length:5, packet size:3
+------------------------c_procPacket	108
+opcode, handle & pack	108	nil	userdata: 0x6ce908
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:548!
+length:548, headSize:4
+------OnRecvPacket--SoftRead------, buf length:548, packet size:546
+------------------------c_procPacket	110
+opcode, handle & pack	110	nil	userdata: 0x6ed5d8
+INFO:	------------------recv res:43!
+length:43, headSize:4
+------OnRecvPacket--SoftRead------, buf length:43, packet size:25
+------------------------c_procPacket	144
+opcode, handle & pack	144	nil	userdata: 0x6f2798
+------OnRecvPacket--SoftRead------, buf length:16, packet size:14
+------------------------c_procPacket	147
+opcode, handle & pack	147	nil	userdata: 0x6fc5e8
+INFO:	------------------recv res:58!
+length:58, headSize:4
+------OnRecvPacket--SoftRead------, buf length:58, packet size:56
+------------------------c_procPacket	3445
+opcode, handle & pack	3445	nil	userdata: 0x701668
+INFO:	------------------recv res:10!
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	2810
+opcode, handle & pack	2810	nil	userdata: 0x6eaa38
+INFO:	------------------recv res:13!
+length:13, headSize:4
+------OnRecvPacket--SoftRead------, buf length:13, packet size:3
+------------------------c_procPacket	5859
+opcode, handle & pack	5859	nil	userdata: 0x6f6338
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6808
+opcode, handle & pack	6808	nil	userdata: 0x6fe968
+INFO:	------------------recv res:-1!
+INFO:	recv msg finish
+client event readable
+INFO:	------------------recv res:12!
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:10
+------------------------c_procPacket	53
+CReadUInt:7001011
+ReadUShort:15
+ReadUShort:20
+7001011
+CWriteUInt:4001010
+----------------SendPacket:0x7fffa0617c90
+length:78, headSize:4
+------OnRecvPacket--SoftRead------, buf length:78, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6efb48
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x703968
+client event writeable
+-----------------event writeable
+0x6e82b0: send res:8
+0 6 52 0 -14 12 61 0 
+client event readable
+length:479, headSize:4
+------OnRecvPacket--SoftRead------, buf length:479, packet size:477
+------------------------c_procPacket	51
+opcode, handle & pack	51	nil	userdata: 0x704b28
+client event readable
+length:144, headSize:4
+------OnRecvPacket--SoftRead------, buf length:144, packet size:142
+------------------------c_procPacket	801
+opcode, handle & pack	801	nil	userdata: 0x6f9b08
+client event readable
+length:76, headSize:4
+------OnRecvPacket--SoftRead------, buf length:76, packet size:74
+------------------------c_procPacket	6001
+opcode, handle & pack	6001	nil	userdata: 0x6fb588
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:4
+------------------------c_procPacket	201
+opcode, handle & pack	201	nil	userdata: 0x6febd8
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	204
+opcode, handle & pack	204	nil	userdata: 0x702118
+length:26, headSize:4
+------OnRecvPacket--SoftRead------, buf length:26, packet size:18
+------------------------c_procPacket	212
+opcode, handle & pack	212	nil	userdata: 0x6e2c78
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	223
+opcode, handle & pack	223	nil	userdata: 0x6ccb28
+client event readable
+length:61, headSize:4
+------OnRecvPacket--SoftRead------, buf length:61, packet size:53
+------------------------c_procPacket	601
+opcode, handle & pack	601	nil	userdata: 0x6cde48
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	602
+opcode, handle & pack	602	nil	userdata: 0x6fce78
+client event readable
+length:20, headSize:4
+------OnRecvPacket--SoftRead------, buf length:20, packet size:12
+------------------------c_procPacket	3403
+opcode, handle & pack	3403	nil	userdata: 0x6e43f8
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	615
+opcode, handle & pack	615	nil	userdata: 0x6cf698
+length:114, headSize:4
+------OnRecvPacket--SoftRead------, buf length:114, packet size:104
+------------------------c_procPacket	870
+opcode, handle & pack	870	nil	userdata: 0x70ac08
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	1632
+opcode, handle & pack	1632	nil	userdata: 0x7097f8
+length:13, headSize:4
+------OnRecvPacket--SoftRead------, buf length:13, packet size:6
+------------------------c_procPacket	124
+opcode, handle & pack	124	nil	userdata: 0x708428
+------OnRecvPacket--SoftRead------, buf length:5, packet size:3
+------------------------c_procPacket	108
+opcode, handle & pack	108	nil	userdata: 0x707018
+client event readable
+length:548, headSize:4
+------OnRecvPacket--SoftRead------, buf length:548, packet size:546
+------------------------c_procPacket	110
+opcode, handle & pack	110	nil	userdata: 0x703688
+length:43, headSize:4
+------OnRecvPacket--SoftRead------, buf length:43, packet size:25
+------------------------c_procPacket	144
+opcode, handle & pack	144	nil	userdata: 0x702c08
+------OnRecvPacket--SoftRead------, buf length:16, packet size:14
+------------------------c_procPacket	147
+opcode, handle & pack	147	nil	userdata: 0x6e8b58
+length:58, headSize:4
+------OnRecvPacket--SoftRead------, buf length:58, packet size:56
+------------------------c_procPacket	3445
+opcode, handle & pack	3445	nil	userdata: 0x6d4598
+length:23, headSize:4
+------OnRecvPacket--SoftRead------, buf length:23, packet size:8
+------------------------c_procPacket	2810
+opcode, handle & pack	2810	nil	userdata: 0x6d7758
+------OnRecvPacket--SoftRead------, buf length:13, packet size:3
+------------------------c_procPacket	5859
+opcode, handle & pack	5859	nil	userdata: 0x6be528
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6808
+opcode, handle & pack	6808	nil	userdata: 0x6cfca8
+client event readable
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:10
+------------------------c_procPacket	53
+CReadUInt:4001010
+ReadUShort:9
+ReadUShort:24
+4001010
+client event readable
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6f31a8
+client event readable
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6e5318
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6d9b68
+length:57, headSize:4
+------OnRecvPacket--SoftRead------, buf length:57, packet size:55
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6e4f68
+client event readable
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6e3818
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6c0d58
+client event readable
+length:44, headSize:4
+------OnRecvPacket--SoftRead------, buf length:44, packet size:42
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6cc398
+client event readable
+length:478, headSize:4
+------OnRecvPacket--SoftRead------, buf length:478, packet size:476
+------------------------c_procPacket	51
+opcode, handle & pack	51	nil	userdata: 0x6cc458
+client event readable
+length:144, headSize:4
+------OnRecvPacket--SoftRead------, buf length:144, packet size:142
+------------------------c_procPacket	801
+opcode, handle & pack	801	nil	userdata: 0x6ea658
+client event readable
+length:77, headSize:4
+------OnRecvPacket--SoftRead------, buf length:77, packet size:75
+------------------------c_procPacket	6001
+opcode, handle & pack	6001	nil	userdata: 0x6bfb48
+client event readable
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:4
+------------------------c_procPacket	201
+opcode, handle & pack	201	nil	userdata: 0x6dace8
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	204
+opcode, handle & pack	204	nil	userdata: 0x6dade8
+length:26, headSize:4
+------OnRecvPacket--SoftRead------, buf length:26, packet size:18
+------------------------c_procPacket	212
+opcode, handle & pack	212	nil	userdata: 0x6d1f18
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	223
+opcode, handle & pack	223	nil	userdata: 0x6e7568
+length:52, headSize:4
+------OnRecvPacket--SoftRead------, buf length:52, packet size:44
+------------------------c_procPacket	601
+opcode, handle & pack	601	nil	userdata: 0x6f42c8
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	602
+opcode, handle & pack	602	nil	userdata: 0x6f4388
+length:20, headSize:4
+------OnRecvPacket--SoftRead------, buf length:20, packet size:12
+------------------------c_procPacket	3403
+opcode, handle & pack	3403	nil	userdata: 0x703848
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	615
+opcode, handle & pack	615	nil	userdata: 0x6d71e8
+length:106, headSize:4
+------OnRecvPacket--SoftRead------, buf length:106, packet size:104
+------------------------c_procPacket	870
+opcode, handle & pack	870	nil	userdata: 0x6d72e8
+length:8, headSize:4
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	1632
+opcode, handle & pack	1632	nil	userdata: 0x705d48
+length:13, headSize:4
+------OnRecvPacket--SoftRead------, buf length:13, packet size:6
+------------------------c_procPacket	124
+opcode, handle & pack	124	nil	userdata: 0x705e78
+------OnRecvPacket--SoftRead------, buf length:5, packet size:3
+------------------------c_procPacket	108
+opcode, handle & pack	108	nil	userdata: 0x709a68
+client event readable
+length:548, headSize:4
+------OnRecvPacket--SoftRead------, buf length:548, packet size:546
+------------------------c_procPacket	110
+opcode, handle & pack	110	nil	userdata: 0x701ba8
+length:43, headSize:4
+------OnRecvPacket--SoftRead------, buf length:43, packet size:25
+------------------------c_procPacket	144
+opcode, handle & pack	144	nil	userdata: 0x70c248
+------OnRecvPacket--SoftRead------, buf length:16, packet size:14
+------------------------c_procPacket	147
+opcode, handle & pack	147	nil	userdata: 0x7071d8
+length:68, headSize:4
+------OnRecvPacket--SoftRead------, buf length:68, packet size:56
+------------------------c_procPacket	3445
+opcode, handle & pack	3445	nil	userdata: 0x7085b8
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	2810
+opcode, handle & pack	2810	nil	userdata: 0x6d4a48
+length:13, headSize:4
+------OnRecvPacket--SoftRead------, buf length:13, packet size:3
+------------------------c_procPacket	5859
+opcode, handle & pack	5859	nil	userdata: 0x6d4b78
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6808
+opcode, handle & pack	6808	nil	userdata: 0x6cfa58
+client event readable
+length:24, headSize:4
+------OnRecvPacket--SoftRead------, buf length:24, packet size:22
+------------------------c_procPacket	6003
+opcode, handle & pack	6003	nil	userdata: 0x6cdb58
+client event readable
+length:20, headSize:4
+------OnRecvPacket--SoftRead------, buf length:20, packet size:18
+------------------------c_procPacket	6015
+opcode, handle & pack	6015	nil	userdata: 0x6d5fd8
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:10
+------------------------c_procPacket	53
+CReadUInt:4001010
+ReadUShort:5
+ReadUShort:20
+4001010
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6f6e98
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6d74d8
+client event readable
+length:57, headSize:4
+------OnRecvPacket--SoftRead------, buf length:57, packet size:55
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6d7618
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6e9cc8
+length:44, headSize:4
+------OnRecvPacket--SoftRead------, buf length:44, packet size:42
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x701128
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x701278
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6ff768
+client event readable
+length:29, headSize:4
+------OnRecvPacket--SoftRead------, buf length:29, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6fdc48
+client event readable
+length:29, headSize:4
+------OnRecvPacket--SoftRead------, buf length:29, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6fa688
+length:29, headSize:4
+------OnRecvPacket--SoftRead------, buf length:29, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6c92b8
+length:18, headSize:4
+------OnRecvPacket--SoftRead------, buf length:18, packet size:16
+------------------------c_procPacket	59
+opcode, handle & pack	59	nil	userdata: 0x6f06e8
+length:28, headSize:4
+------OnRecvPacket--SoftRead------, buf length:28, packet size:26
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6eeb88
+client event readable
+length:86, headSize:4
+------OnRecvPacket--SoftRead------, buf length:86, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6eb4d8
+------OnRecvPacket--SoftRead------, buf length:57, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6eb638
+------OnRecvPacket--SoftRead------, buf length:28, packet size:26
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6e9b58
+client event readable
+length:57, headSize:4
+------OnRecvPacket--SoftRead------, buf length:57, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6e8138
+------OnRecvPacket--SoftRead------, buf length:28, packet size:26
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6e6868
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	12
+opcode, handle & pack	12	nil	userdata: 0x6bc728
+length:8, headSize:4
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6219
+opcode, handle & pack	6219	nil	userdata: 0x6bc828
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:6
+------------------------c_procPacket	134
+opcode, handle & pack	134	nil	userdata: 0x6cc868
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	3503
+opcode, handle & pack	3503	nil	userdata: 0x704968
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	12
+opcode, handle & pack	12	nil	userdata: 0x6f58d8
+client event readable
+length:8, headSize:4
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6219
+opcode, handle & pack	6219	nil	userdata: 0x6f59d8
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:6
+------------------------c_procPacket	134
+opcode, handle & pack	134	nil	userdata: 0x6d1c88
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	3503
+opcode, handle & pack	3503	nil	userdata: 0x6daa68
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	12
+opcode, handle & pack	12	nil	userdata: 0x6e54e8
+length:8, headSize:4
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6219
+opcode, handle & pack	6219	nil	userdata: 0x6e5618
+length:8, headSize:4
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	134
+opcode, handle & pack	134	nil	userdata: 0x6e6e38
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	3503
+opcode, handle & pack	3503	nil	userdata: 0x6f5b48
+client event readable
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:10
+------------------------c_procPacket	53
+CReadUInt:4001010
+ReadUShort:5
+ReadUShort:20
+4001010
+client event readable
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6f7438
+client event readable
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6fc128
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6c9058
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6f96b8
+length:44, headSize:4
+------OnRecvPacket--SoftRead------, buf length:44, packet size:42
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6fcc38
+length:57, headSize:4
+------OnRecvPacket--SoftRead------, buf length:57, packet size:55
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6fcd78
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6fe848
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x7002c8
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x70c5f8
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6f5708
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6d9c58
+client event readable
+length:479, headSize:4
+------OnRecvPacket--SoftRead------, buf length:479, packet size:477
+------------------------c_procPacket	51
+opcode, handle & pack	51	nil	userdata: 0x6d9d18
+client event readable
+length:144, headSize:4
+------OnRecvPacket--SoftRead------, buf length:144, packet size:142
+------------------------c_procPacket	801
+opcode, handle & pack	801	nil	userdata: 0x6f3ce8
+client event readable
+length:77, headSize:4
+------OnRecvPacket--SoftRead------, buf length:77, packet size:75
+------------------------c_procPacket	6001
+opcode, handle & pack	6001	nil	userdata: 0x6f3dc8
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:4
+------------------------c_procPacket	201
+opcode, handle & pack	201	nil	userdata: 0x6eee28
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	204
+opcode, handle & pack	204	nil	userdata: 0x6eef58
+length:26, headSize:4
+------OnRecvPacket--SoftRead------, buf length:26, packet size:18
+------------------------c_procPacket	212
+opcode, handle & pack	212	nil	userdata: 0x6d02a8
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	223
+opcode, handle & pack	223	nil	userdata: 0x6c0e48
+client event readable
+length:55, headSize:4
+------OnRecvPacket--SoftRead------, buf length:55, packet size:53
+------------------------c_procPacket	601
+opcode, handle & pack	601	nil	userdata: 0x6c0ff8
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	602
+opcode, handle & pack	602	nil	userdata: 0x6dcb88
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	3403
+opcode, handle & pack	3403	nil	userdata: 0x6dccb8
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	615
+opcode, handle & pack	615	nil	userdata: 0x6fff58
+length:106, headSize:4
+------OnRecvPacket--SoftRead------, buf length:106, packet size:104
+------------------------c_procPacket	870
+opcode, handle & pack	870	nil	userdata: 0x6fe3e8
+length:8, headSize:4
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	1632
+opcode, handle & pack	1632	nil	userdata: 0x6fe518
+length:13, headSize:4
+------OnRecvPacket--SoftRead------, buf length:13, packet size:6
+------------------------c_procPacket	124
+opcode, handle & pack	124	nil	userdata: 0x6fc8c8
+------OnRecvPacket--SoftRead------, buf length:5, packet size:3
+------------------------c_procPacket	108
+opcode, handle & pack	108	nil	userdata: 0x6fc9f8
+client event readable
+length:548, headSize:4
+------OnRecvPacket--SoftRead------, buf length:548, packet size:546
+------------------------c_procPacket	110
+opcode, handle & pack	110	nil	userdata: 0x6f9508
+length:27, headSize:4
+------OnRecvPacket--SoftRead------, buf length:27, packet size:25
+------------------------c_procPacket	144
+opcode, handle & pack	144	nil	userdata: 0x6f2ba8
+length:16, headSize:4
+------OnRecvPacket--SoftRead------, buf length:16, packet size:14
+------------------------c_procPacket	147
+opcode, handle & pack	147	nil	userdata: 0x6fade8
+length:58, headSize:4
+------OnRecvPacket--SoftRead------, buf length:58, packet size:56
+------------------------c_procPacket	3445
+opcode, handle & pack	3445	nil	userdata: 0x6faee8
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	2810
+opcode, handle & pack	2810	nil	userdata: 0x6f0fa8
+length:13, headSize:4
+------OnRecvPacket--SoftRead------, buf length:13, packet size:3
+------------------------c_procPacket	5859
+opcode, handle & pack	5859	nil	userdata: 0x6f10d8
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6808
+opcode, handle & pack	6808	nil	userdata: 0x6ef448
+client event readable
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:10
+------------------------c_procPacket	53
+CReadUInt:4001010
+ReadUShort:42
+ReadUShort:23
+4001010
+client event readable
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6ed8f8
+client event readable
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6eda58
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6ebe68
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6ebfa8
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6ea378
+length:44, headSize:4
+------OnRecvPacket--SoftRead------, buf length:44, packet size:42
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6e87d8
+client event readable
+length:57, headSize:4
+------OnRecvPacket--SoftRead------, buf length:57, packet size:55
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6e8918
+client event readable
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6e2528
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6e2688
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6bff68
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x704c68
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x704da8
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x7060b8
+client event readable
+length:488, headSize:4
+------OnRecvPacket--SoftRead------, buf length:488, packet size:486
+------------------------c_procPacket	51
+opcode, handle & pack	51	nil	userdata: 0x707678
+client event readable
+length:144, headSize:4
+------OnRecvPacket--SoftRead------, buf length:144, packet size:142
+------------------------c_procPacket	801
+opcode, handle & pack	801	nil	userdata: 0x7074e8
+client event readable
+length:77, headSize:4
+------OnRecvPacket--SoftRead------, buf length:77, packet size:75
+------------------------c_procPacket	6001
+opcode, handle & pack	6001	nil	userdata: 0x706138
+length:32, headSize:4
+------OnRecvPacket--SoftRead------, buf length:32, packet size:4
+------------------------c_procPacket	201
+opcode, handle & pack	201	nil	userdata: 0x709d28
+------OnRecvPacket--SoftRead------, buf length:26, packet size:4
+------------------------c_procPacket	204
+opcode, handle & pack	204	nil	userdata: 0x709e28
+------OnRecvPacket--SoftRead------, buf length:20, packet size:18
+------------------------c_procPacket	212
+opcode, handle & pack	212	nil	userdata: 0x70b0f8
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	223
+opcode, handle & pack	223	nil	userdata: 0x70b228
+length:66, headSize:4
+------OnRecvPacket--SoftRead------, buf length:66, packet size:44
+------------------------c_procPacket	601
+opcode, handle & pack	601	nil	userdata: 0x6f7118
+------OnRecvPacket--SoftRead------, buf length:20, packet size:4
+------------------------c_procPacket	602
+opcode, handle & pack	602	nil	userdata: 0x6f7208
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	3403
+opcode, handle & pack	3403	nil	userdata: 0x6f78d8
+length:112, headSize:4
+------OnRecvPacket--SoftRead------, buf length:112, packet size:4
+------------------------c_procPacket	615
+opcode, handle & pack	615	nil	userdata: 0x6f7a08
+------OnRecvPacket--SoftRead------, buf length:106, packet size:104
+------------------------c_procPacket	870
+opcode, handle & pack	870	nil	userdata: 0x6e59d8
+length:21, headSize:4
+------OnRecvPacket--SoftRead------, buf length:21, packet size:6
+------------------------c_procPacket	1632
+opcode, handle & pack	1632	nil	userdata: 0x6f2dc8
+------OnRecvPacket--SoftRead------, buf length:13, packet size:6
+------------------------c_procPacket	124
+opcode, handle & pack	124	nil	userdata: 0x6f2ef8
+------OnRecvPacket--SoftRead------, buf length:5, packet size:3
+------------------------c_procPacket	108
+opcode, handle & pack	108	nil	userdata: 0x6c9f68
+client event readable
+length:548, headSize:4
+------OnRecvPacket--SoftRead------, buf length:548, packet size:546
+------------------------c_procPacket	110
+opcode, handle & pack	110	nil	userdata: 0x6ffa98
+client event readable
+length:43, headSize:4
+------OnRecvPacket--SoftRead------, buf length:43, packet size:25
+------------------------c_procPacket	144
+opcode, handle & pack	144	nil	userdata: 0x6ca178
+------OnRecvPacket--SoftRead------, buf length:16, packet size:14
+------------------------c_procPacket	147
+opcode, handle & pack	147	nil	userdata: 0x6dd958
+length:58, headSize:4
+------OnRecvPacket--SoftRead------, buf length:58, packet size:56
+------------------------c_procPacket	3445
+opcode, handle & pack	3445	nil	userdata: 0x6fc288
+length:15, headSize:4
+------OnRecvPacket--SoftRead------, buf length:15, packet size:8
+------------------------c_procPacket	2810
+opcode, handle & pack	2810	nil	userdata: 0x6fc3b8
+------OnRecvPacket--SoftRead------, buf length:5, packet size:3
+------------------------c_procPacket	5859
+opcode, handle & pack	5859	nil	userdata: 0x6fc4e8
+length:8, headSize:4
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6808
+opcode, handle & pack	6808	nil	userdata: 0x6c3e78
+client event readable
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:10
+------------------------c_procPacket	53
+CReadUInt:4001010
+ReadUShort:5
+ReadUShort:20
+4001010
+client event readable
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x702e88
+client event readable
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x702fe8
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6fb258
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6fb398
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x701da8
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x701f18
+length:44, headSize:4
+------OnRecvPacket--SoftRead------, buf length:44, packet size:42
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6f13e8
+length:57, headSize:4
+------OnRecvPacket--SoftRead------, buf length:57, packet size:55
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6f14f8
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6f4608
+length:39, headSize:4
+------OnRecvPacket--SoftRead------, buf length:39, packet size:37
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6f4768
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6fa8c8
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6faa08
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x701448
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6d0ef8
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x6d1038
+client event readable
+length:488, headSize:4
+------OnRecvPacket--SoftRead------, buf length:488, packet size:486
+------------------------c_procPacket	51
+opcode, handle & pack	51	nil	userdata: 0x6e4168
+client event readable
+length:144, headSize:4
+------OnRecvPacket--SoftRead------, buf length:144, packet size:142
+------------------------c_procPacket	801
+opcode, handle & pack	801	nil	userdata: 0x6e27d8
+client event readable
+length:77, headSize:4
+------OnRecvPacket--SoftRead------, buf length:77, packet size:75
+------------------------c_procPacket	6001
+opcode, handle & pack	6001	nil	userdata: 0x6e28b8
+client event readable
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:4
+------------------------c_procPacket	201
+opcode, handle & pack	201	nil	userdata: 0x6ec128
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	204
+opcode, handle & pack	204	nil	userdata: 0x6ec258
+length:26, headSize:4
+------OnRecvPacket--SoftRead------, buf length:26, packet size:18
+------------------------c_procPacket	212
+opcode, handle & pack	212	nil	userdata: 0x6ec388
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	223
+opcode, handle & pack	223	nil	userdata: 0x6daf58
+length:81, headSize:4
+------OnRecvPacket--SoftRead------, buf length:81, packet size:53
+------------------------c_procPacket	601
+opcode, handle & pack	601	nil	userdata: 0x6edda8
+------OnRecvPacket--SoftRead------, buf length:26, packet size:4
+------------------------c_procPacket	602
+opcode, handle & pack	602	nil	userdata: 0x6ede98
+------OnRecvPacket--SoftRead------, buf length:20, packet size:12
+------------------------c_procPacket	3403
+opcode, handle & pack	3403	nil	userdata: 0x6ef808
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	615
+opcode, handle & pack	615	nil	userdata: 0x6ef938
+length:127, headSize:4
+------OnRecvPacket--SoftRead------, buf length:127, packet size:104
+------------------------c_procPacket	870
+opcode, handle & pack	870	nil	userdata: 0x6dbc28
+------OnRecvPacket--SoftRead------, buf length:21, packet size:6
+------------------------c_procPacket	1632
+opcode, handle & pack	1632	nil	userdata: 0x6dbd58
+------OnRecvPacket--SoftRead------, buf length:13, packet size:6
+------------------------c_procPacket	124
+opcode, handle & pack	124	nil	userdata: 0x6dd478
+------OnRecvPacket--SoftRead------, buf length:5, packet size:3
+------------------------c_procPacket	108
+opcode, handle & pack	108	nil	userdata: 0x6dd5a8
+client event readable
+length:548, headSize:4
+------OnRecvPacket--SoftRead------, buf length:548, packet size:546
+------------------------c_procPacket	110
+opcode, handle & pack	110	nil	userdata: 0x6fdf78
+length:43, headSize:4
+------OnRecvPacket--SoftRead------, buf length:43, packet size:25
+------------------------c_procPacket	144
+opcode, handle & pack	144	nil	userdata: 0x6f0cc8
+------OnRecvPacket--SoftRead------, buf length:16, packet size:14
+------------------------c_procPacket	147
+opcode, handle & pack	147	nil	userdata: 0x6fe118
+length:58, headSize:4
+------OnRecvPacket--SoftRead------, buf length:58, packet size:56
+------------------------c_procPacket	3445
+opcode, handle & pack	3445	nil	userdata: 0x6dd7b8
+length:23, headSize:4
+------OnRecvPacket--SoftRead------, buf length:23, packet size:8
+------------------------c_procPacket	2810
+opcode, handle & pack	2810	nil	userdata: 0x6f09f8
+------OnRecvPacket--SoftRead------, buf length:13, packet size:3
+------------------------c_procPacket	5859
+opcode, handle & pack	5859	nil	userdata: 0x6f0b28
+------OnRecvPacket--SoftRead------, buf length:8, packet size:6
+------------------------c_procPacket	6808
+opcode, handle & pack	6808	nil	userdata: 0x7131d8
+client event readable
+length:29, headSize:4
+------OnRecvPacket--SoftRead------, buf length:29, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x713368
+client event readable
+length:29, headSize:4
+------OnRecvPacket--SoftRead------, buf length:29, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x7134c8
+client event readable
+length:67, headSize:4
+------OnRecvPacket--SoftRead------, buf length:67, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6dcef8
+------OnRecvPacket--SoftRead------, buf length:38, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6dd058
+client event readable
+length:67, headSize:4
+------OnRecvPacket--SoftRead------, buf length:67, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6dd1b8
+------OnRecvPacket--SoftRead------, buf length:38, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6be778
+length:38, headSize:4
+------OnRecvPacket--SoftRead------, buf length:38, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6be8d8
+client event readable
+length:105, headSize:4
+------OnRecvPacket--SoftRead------, buf length:105, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6bea38
+------OnRecvPacket--SoftRead------, buf length:76, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6beb98
+------OnRecvPacket--SoftRead------, buf length:38, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6becf8
+client event readable
+length:105, headSize:4
+------OnRecvPacket--SoftRead------, buf length:105, packet size:27
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6d20e8
+------OnRecvPacket--SoftRead------, buf length:76, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6d2248
+------OnRecvPacket--SoftRead------, buf length:38, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6d23a8
+client event readable
+length:38, headSize:4
+------OnRecvPacket--SoftRead------, buf length:38, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6d2508
+client event readable
+length:76, headSize:4
+------OnRecvPacket--SoftRead------, buf length:76, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6d2668
+------OnRecvPacket--SoftRead------, buf length:38, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6d27c8
+client event readable
+length:76, headSize:4
+------OnRecvPacket--SoftRead------, buf length:76, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6d2928
+------OnRecvPacket--SoftRead------, buf length:38, packet size:36
+------------------------c_procPacket	56
+opcode, handle & pack	56	nil	userdata: 0x6d2a88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d2bb8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d2ce8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d2e18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d2f48
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d3078
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d31a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d32d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d3408
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d3538
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d3668
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d3798
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d38c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d39f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d3b28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d3c58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d3d88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x6d3eb8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7775f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x777728
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x777858
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x777988
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x777ab8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x777be8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x777d18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x777e48
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x777f78
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7780a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7781d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x778308
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x778438
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x778568
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x778698
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7787c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7788f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x778a28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x778b58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x778c88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x778db8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x778ee8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x779018
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x779148
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x779278
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7793a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7794d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x779608
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x779738
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x779888
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7799d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x779b28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x779c78
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x779dc8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x779f18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77a068
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77a1b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77a308
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77a458
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77a5a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77a6f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77a848
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77a998
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77aae8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77ac38
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77ad88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77aed8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77b028
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77b178
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77b2c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77b418
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77b568
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77b6b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77b808
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77b958
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77baa8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77bbf8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77bd48
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77be98
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77bfe8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77c138
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77c288
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77c3d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77c528
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77c678
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77c7c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77c918
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77ca68
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77cbb8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77cd08
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77ce58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77cfa8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77d0f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77d248
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77d398
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77d4e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77d638
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77d788
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77d8d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77da28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77db78
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77dcc8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77de18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77df68
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77e0b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77e208
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77e358
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77e4a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77e5f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77e748
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77e898
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77e9e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77eb38
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77ec88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77edd8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77ef28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77f078
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77f1c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77f318
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77f468
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77f5b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77f708
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77f858
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77f9a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77faf8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77fc48
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77fd98
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x77fee8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780038
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780188
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7802d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780428
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780578
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7806c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780818
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780968
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780ab8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780c08
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780d58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780ea8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x780ff8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x781148
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x781298
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7813e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x781538
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x781688
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7817d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x781928
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x781a78
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x781bc8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x781d18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x781e68
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x781fb8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x782108
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x782258
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7823a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7824f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x782648
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x782798
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7828e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x782a38
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x782b88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x782cd8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x782e28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x782f78
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7830c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x783218
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x783368
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7834b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x783608
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x783758
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7838a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7839f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x783b48
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x783c98
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x783de8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x783f38
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x784088
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7841d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x784328
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x784478
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7845c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x784718
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x784868
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7849b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x784b08
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x784c58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x784da8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x784ef8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x785048
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x785198
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7852e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x785438
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x785588
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7856d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x785828
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x785978
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x785ac8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x785c18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x785d68
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x785eb8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x786008
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x786158
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7862a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7863f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x786548
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x786698
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7867e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x786938
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x786a88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x786bd8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x786d28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x786e78
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x786fc8
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x787148
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x787298
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x7873e8
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x787538
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x787688
+client event readable
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:4
+------------------------c_procPacket	14
+opcode, handle & pack	14	nil	userdata: 0x7877d8
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	14
+opcode, handle & pack	14	nil	userdata: 0x787928
+client event readable
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	14
+opcode, handle & pack	14	nil	userdata: 0x787a78
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x787c28
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x787d98
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x787f08
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x788078
+client event readable
+length:54, headSize:4
+------OnRecvPacket--SoftRead------, buf length:54, packet size:52
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x7881e8
+client event readable
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7882f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x788448
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x788598
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7886e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x788838
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x788988
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x788ad8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x788c28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x788d78
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x788ec8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x789018
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x789168
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7892b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x789408
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x789558
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7896a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7897f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x789948
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x789a98
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x789be8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x789d38
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x789e88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x789fd8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78a128
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78a278
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78a3c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78a518
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78a668
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78a7b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78a908
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78aa58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78aba8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78acf8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78ae48
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78af98
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78b0e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78b238
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78b388
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78b4d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78b628
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78b778
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78b8c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78ba18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78bb68
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78bcb8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78be08
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78bf58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78c008
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78c138
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78c288
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78c3d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78c528
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78c678
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78c7c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78c918
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78ca68
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78cbb8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78cd08
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78ce58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78cfa8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78d0f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78d248
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78d398
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78d4e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78d638
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78d788
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78d8d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78da28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78db78
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78dcc8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78de18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78df68
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78e0b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78e208
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78e358
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78e4a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78e5f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78e748
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78e898
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78e9e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78eb38
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78ec88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78edd8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78ef28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78f078
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78f1c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78f318
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78f468
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78f5b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78f708
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78f858
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78f9a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78faf8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78fc48
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78fd98
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x78fee8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790038
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790188
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7902d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790428
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790578
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7906c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790818
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790968
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790ab8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790c08
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790d58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790ea8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x790ff8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x791148
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x791298
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7913e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x791538
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x791688
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7917d8
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x791928
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x791a78
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x791bc8
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x791d18
+client event readable
+length:10, headSize:4
+------OnRecvPacket--SoftRead------, buf length:10, packet size:8
+------------------------c_procPacket	58
+opcode, handle & pack	58	nil	userdata: 0x791e68
+client event readable
+length:12, headSize:4
+------OnRecvPacket--SoftRead------, buf length:12, packet size:4
+------------------------c_procPacket	14
+opcode, handle & pack	14	nil	userdata: 0x791fb8
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	14
+opcode, handle & pack	14	nil	userdata: 0x792108
+client event readable
+length:6, headSize:4
+------OnRecvPacket--SoftRead------, buf length:6, packet size:4
+------------------------c_procPacket	14
+opcode, handle & pack	14	nil	userdata: 0x792258
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x792408
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x792578
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x7926e8
+client event readable
+length:45, headSize:4
+------OnRecvPacket--SoftRead------, buf length:45, packet size:43
+------------------------c_procPacket	57
+opcode, handle & pack	57	nil	userdata: 0x792858
+client event readable
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x792968
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x792ab8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x792c08
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x792d58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x792ea8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x792ff8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x793148
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x793298
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7933e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x793538
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x793688
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7937d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x793928
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x793a78
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x793bc8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x793d18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x793e68
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x793fb8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x794108
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x794258
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7943a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7944f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x794648
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x794798
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7948e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x794a38
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x794b88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x794cd8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x794e28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x794f78
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7950c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x795218
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x795368
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7954b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x795608
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x795758
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7958a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7959f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x795b48
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x795c98
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x795de8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x795f38
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x796088
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7961d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x796328
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x796478
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7965c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x796718
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x796868
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7969b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x796b08
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x796c58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x796da8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x796ef8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x797048
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x797198
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7972e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x797438
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x797588
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7976d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x797828
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x797978
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x797ac8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x797c18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x797d68
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x797eb8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x798008
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x798158
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7982a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7983f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x798548
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x798698
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7987e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x798938
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x798a88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x798bd8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x798d28
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x798e78
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x798fc8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x799118
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x799268
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7993b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x799508
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x799658
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7997a8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x7998f8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x799a48
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x799b98
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x799ce8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x799e38
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x799f88
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79a0d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79a228
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79a378
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79a4c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79a618
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79a768
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79a8b8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79aa08
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79ab58
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79aca8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79adf8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79af48
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79b098
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79b1e8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79b338
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79b488
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79b5d8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79b728
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79b878
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79b9c8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79bb18
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79bc68
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79bdb8
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79bf08
+client event readable
+length:14, headSize:4
+------OnRecvPacket--SoftRead------, buf length:14, packet size:12
+------------------------c_procPacket	55
+opcode, handle & pack	55	nil	userdata: 0x79c058
+~Client:0x6e6a50
+~Client:0x6cdf60
+~Client:0x6ea740
+~Client:0x6e82b0
+~Client:0x6eb700
+~Client:0x6ed230

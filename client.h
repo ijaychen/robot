@@ -14,6 +14,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
+#include <errno.h>
 
 class Client
 {
@@ -23,9 +24,8 @@ public:
 	{
 		strcpy(m_accountName, accountName);
 		strcpy(m_passwd, passwd);
-		printf("%p, name:%s, passwd:%s\n", this, m_accountName, m_passwd);
-		m_ibuf = new CircularBuffer(0x4000);
-		m_obuf = new CircularBuffer(0x4000);
+		m_ibuf = new CircularBuffer(0x10000);
+		m_obuf = new CircularBuffer(0x10000);
 	}
 
 	virtual ~Client()
@@ -48,7 +48,13 @@ public:
 		assert(rc != -1);
 	}
 
-	void ConnectServer(const char * serverAddr, int nPort, const char * serverName)
+	void DisConnectLoginServer()
+	{
+		close(m_socket);
+		RemoveFromDispatcher();
+	}
+
+	void ConnectLoginServer(const char * serverAddr, int nPort, const char * serverName)
 	{
 		m_socket = socket(AF_INET, SOCK_STREAM, 0);
 		assert(-1 != m_socket);
@@ -58,7 +64,7 @@ public:
 		saddr.sin_addr.s_addr = inet_addr(serverAddr);
 		socklen_t len = sizeof(saddr);
 		int res = connect(m_socket, (sockaddr*)&saddr, len);
-		printf("connect result: %d\n", res);
+		printf("connect result: %d, client:%s\n", res, m_accountName);
 		//assert(0 == res);
 		make_fd_nonblocking(m_socket);
 		AddToDispatcher(EPOLLIN);
@@ -66,10 +72,26 @@ public:
 
 	}
 
+	int ConnectGameServer(const char * ip, int nPort)
+	{
+		if(m_socket > 0)
+			close(m_socket);
+		m_socket = socket(AF_INET, SOCK_STREAM, 0);
+		assert(-1 != m_socket);
+		sockaddr_in saddr = {0};
+		saddr.sin_family = AF_INET;
+		saddr.sin_addr.s_addr = inet_addr(ip);
+		socklen_t len = sizeof(saddr);
+		int res = connect(m_socket, (sockaddr*)&saddr, len);
+		printf("connect gameserver res:%d, client:%s\n", res, m_accountName);
+		make_fd_nonblocking(m_socket);
+		AddToDispatcher(EPOLLIN);
+		return 1;
+	}
+
 	void SendLoginPacket(const char * serverName)
 	{
 		WorldPacket pack(15, 100);
-		printf("--->>>>>>.%s %s %s\n", serverName, m_accountName, m_passwd);
 		pack.WriteString(serverName);
 		pack.WriteString(m_accountName);
 		pack.WriteString(m_passwd);
@@ -87,6 +109,15 @@ public:
 		assert(r == 0);
 	}
 	
+	void RemoveFromDispatcher()
+	{
+		int epfd = Dispatcher::GetInstance()->GetDispatchfd();
+		epoll_event ee;
+		ee.events = EPOLLET;
+		ee.data.ptr = this;
+		int r = epoll_ctl(epfd, EPOLL_CTL_DEL, m_socket, &ee);
+	}
+	
 	void ModifyIOEvent(int evt)
 	{	
 		//Dispatcher::GetInstance()->AddIofd(m_socket, this);
@@ -100,7 +131,6 @@ public:
 	
 	void SendPacket(WorldPacket pack)
 	{
-		printf("----------------SendPacket:%p\n", &pack);
 		pack.WriteHead();
 		size_t len = pack.GetSize();
 		m_obuf->Write((char*)pack.GetBuffer(), len);		
@@ -109,7 +139,6 @@ public:
 	
 	void OnEventWriteable()
 	{
-		printf("-----------------event writeable\n");
 		int length = m_obuf->GetLength();
 		while(0 < length)
 		{
@@ -117,12 +146,12 @@ public:
 			m_obuf->Read(tmp, length);
 			
 			int res = send(m_socket, tmp, length, 0);
-			printf("%p: send res:%d\n", this, res);
-			for(int i = 0; i < length; ++i)
+			/*for(int i = 0; i < length; ++i)
 			{
 				printf("%d ", tmp[i]);
 			}
 			printf("\n");
+			*/
 			length = m_obuf->GetLength();
 			delete []tmp;
 		}
@@ -133,11 +162,16 @@ public:
 	{
 		size_t length = m_ibuf->GetLength();
 		size_t headSize = sizeof(m_pkHead); 
-		while(headSize < length)
+		char msg[256] = {0};
+		sprintf(msg, "length:%d, headSize:%d\n", length, headSize);
+		debug_log(msg, log_info);
+		while(headSize <= length)
 		{
 			m_ibuf->SoftRead((char*)&m_pkHead.head, sizeof(m_pkHead));
 			uint16_t size = ntohs(m_pkHead.head.size);
-			printf("------OnRecvPacket--SoftRead------, buf length:%d, packet size:%d\n", length, size);
+			char msg[256] = {0};
+			sprintf(msg, "------OnRecvPacket--SoftRead------, buf length:%d, packet size:%d\n", length, size);
+			debug_log(msg, log_info);
 			if(length < size)
 				break;
 			uint16_t opCode = m_pkHead.head.opCode;			
@@ -158,9 +192,22 @@ public:
 		while(true)
 		{
 			char buf[1024] = {0};
+			char msg[128] = {0};
 			res = recv(m_socket, buf, 1024, 0);
-			if(res < 0)
+			sprintf(msg, "------------------recv res:%d!", res);
+			debug_log(msg, log_info);
+			
+			if(res < 0){
+				if (errno == EAGAIN || errno == EWOULDBLOCK){
+					debug_log("recv msg finish", log_info);
+                    ; // 没有更多数据了
+                }
+				else{
+					sprintf(msg, "recv msg error,errno:%d!", errno);
+					debug_log(msg, log_error);
+				}
 				break;
+			}
 			if(0 == res)
 			{
 				char msg[128] = {0};
@@ -183,7 +230,9 @@ public:
 		*(WorldPacket**)lua_newuserdata(m_pLuaState, sizeof(WorldPacket*)) = new WorldPacket(pack);
 		luaL_getmetatable(m_pLuaState, "WorldPacket");
 		lua_setmetatable(m_pLuaState, -2);
-		lua_pcall(m_pLuaState, 2, 0, 0);
+		if(lua_pcall(m_pLuaState, 2, 0, 0)){
+			debug_log(lua_tostring(m_pLuaState, -1), log_error);
+		}
 	}
 	const char * GetAccountName() const 
 	{
@@ -210,6 +259,16 @@ static int LuaFClient(lua_State* L)
 	return 0;	
 }
 
+static int LuaFConnectGameServer(lua_State * L)
+{
+	Client** pClient = (Client**)luaL_checkudata(L, 1, "Client");
+	const char * ip = luaL_checkstring(L, 2);
+	int port = luaL_checknumber(L, 3);
+	int res = (*pClient)->ConnectGameServer(ip, port);
+	lua_pushnumber(L, res);
+	return 1;		
+}
+
 static int LuaFSendPacket(lua_State * L)
 {
 	Client** pClient = (Client**)luaL_checkudata(L, 1, "Client");
@@ -228,8 +287,14 @@ static int LuaFConnectServer(lua_State * L)
 	sprintf(msg, "serverIp:%s, port:%d", ip, port);
 	debug_log(msg);
 	debug_log(serverName);
-	(*pClient)->ConnectServer(ip, port, serverName);
+	(*pClient)->ConnectLoginServer(ip, port, serverName);
 	return 1;
+}
+
+static int LuaFDisConnectLoginServer(lua_State * L)
+{
+	Client** pClient = (Client**)luaL_checkudata(L, 1, "Client");
+	(*pClient)->DisConnectLoginServer();
 }
 
 static int LuaFGetAccountName(lua_State * L)
