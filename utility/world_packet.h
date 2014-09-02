@@ -208,17 +208,22 @@ static int CWriteUInt(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	uint32_t val = luaL_checknumber(L, 2);
-	//printf("CWriteUInt:%ld\n", val);
 	(*pPack)->WriteUInt(val);
 	return 0;
 }
 
+static int CWriteUShort(lua_State* L)
+{
+	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
+	uint32_t val = luaL_checknumber(L, 2);
+	(*pPack)->WriteUShort(val);
+	return 0;
+}
 
 static int CWriteString(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	const char * str = luaL_checkstring(L, 2);
-	printf("CWriteString:%s\n", str);
 	(*pPack)->WriteString(str);
 	return 0;
 }
@@ -227,7 +232,6 @@ static int CWriteByte(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	uint8_t val = luaL_checknumber(L, 2);
-	printf("CWriteByte:%d\n", val);
 	(*pPack)->WriteByte(val);
 	return 0;	
 }
@@ -236,7 +240,6 @@ static int CReadUInt(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	uint32_t val = (*pPack)->ReadUInt();
-	//printf("CReadUInt:%ld\n", val);
 	lua_pushnumber(L, val);
 	return 1;
 }
@@ -245,7 +248,6 @@ static int CReadUShort(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	uint32_t val = (*pPack)->ReadUShort();
-	printf("ReadUShort:%d\n", val);
 	lua_pushnumber(L, val);
 	return 1;
 }
@@ -254,7 +256,6 @@ static int CReadString(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	std::string str = (*pPack)->ReadString();
-	//printf("CReadString:%s\n", str.c_str());
 	lua_pushstring(L, str.c_str());
 	return 1;
 }
@@ -263,7 +264,6 @@ static int CReadByte(lua_State* L)
 {
 	WorldPacket** pPack = (WorldPacket**)luaL_checkudata(L, 1, "WorldPacket");
 	int8_t byte = (*pPack)->ReadByte();
-	//printf("CReadByte:%d\n", byte);
 	lua_pushnumber(L, byte);
 	return 1;
 }

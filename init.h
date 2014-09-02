@@ -21,6 +21,7 @@ static lua_State * init_lua_state()
 	luaReg.RegMemFunction("GetOpcode", CGetOpcode);
 	luaReg.RegMemFunction("WriteString", CWriteString);
 	luaReg.RegMemFunction("WriteUInt", CWriteUInt);
+	luaReg.RegMemFunction("WriteUShort", CWriteUShort);	
 	luaReg.RegMemFunction("WriteByte", CWriteByte);
 	luaReg.RegMemFunction("ReadString", CReadString);
 	luaReg.RegMemFunction("ReadUInt", CReadUInt);
@@ -36,8 +37,8 @@ static lua_State * init_lua_state()
 	luaReg.RegMemFunction("SendPacket", LuaFSendPacket);
 	luaReg.RegMemFunction("ConnectServer", LuaFConnectServer);
 	luaReg.RegMemFunction("GetAccountName", LuaFGetAccountName);
-	luaReg.RegMemFunction("ConnectGameServer", LuaFConnectGameServer);
-	luaReg.RegMemFunction("DisConnectLoginServer", LuaFDisConnectLoginServer);
+	luaReg.RegMemFunction("SetPingTimer", LuaFSetPingTimer);
+	
 	return L;
 }
 
@@ -51,7 +52,7 @@ static void load_lua_scripts(lua_State * L)
 	{
 		if(luaL_loadfile(L, (*iter).c_str()) || lua_pcall(L, 0, 0, 0))
 		{
-			debug_log(lua_tostring(L, -1), log_error); 
+			printf("%s\n", lua_tostring(L, -1)); 
 			return;
 		}
 		debug_log((*iter).c_str());
@@ -64,17 +65,17 @@ static void load_csv_by_lua(lua_State * L)
 	lua_getglobal(L, "c_loadCSVFiles");
 	if(lua_pcall(L, 0, 0, 0))
 	{
-		debug_log(lua_tostring(L, -1), log_error); 
+		printf("%s\n", lua_tostring(L, -1)); 
 	}
 }
 
 static void init_robot_by_lua(lua_State * L)
 {
-	lua_getglobal(L, "c_initRobot");
+	/*lua_getglobal(L, "c_initRobot");
 	if(lua_pcall(L, 0, 0, 0))
 	{
 		debug_log(lua_tostring(L, -1), log_error); 
-	}	
+	}	*/
 }
 
 

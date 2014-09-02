@@ -65,7 +65,9 @@ local function handleSMsgLogin(plr, pack)
 	debug_log("--------------------------SMSG_LOGIN", log_type.info)
 	local ret		=	pack:ReadUShort()
 	local time	=	pack:ReadUInt()
-	print("-----------------handleSMsgLogin", ret)
+	if 0 == ret then
+		plr:SetPingTimer()
+	end
 end
 packetHandler[opCodes.SMSG_LOGIN] = handleSMsgLogin
 
@@ -80,3 +82,11 @@ local function handleRoleCreate(plr, pack)
 	end
 end
 packetHandler[opCodes.L2C_ROLE_CREATE] = handleRoleCreate
+
+--[[
+local function handlePong(plr, pack)
+	local index = pack:ReadUInt()
+	print("game pong",index)
+end	
+packetHandler[opCodes.SMSG_PONG] = handlePong
+--]]

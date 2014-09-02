@@ -1,6 +1,6 @@
 g_serverName = "l_chenjunji"
 g_serverPort = 12736
-g_maxClient = 1
+g_maxClient  = 100
 g_serverAdde = "127.0.0.1"
 
 --[[
@@ -11,3 +11,9 @@ g_serverAdde = "127.0.0.1"
 		3：只写error
 --]]
 log_level  = 3 
+
+--[[
+	活动配置，0表示不参加， 1表示参加
+--]]
+g_testBK = 1
+g_testJZ = 1

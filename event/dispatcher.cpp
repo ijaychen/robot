@@ -11,6 +11,7 @@
 #include <fcntl.h>
 #include "dispatcher.h"
 #include "../client.h"
+#include "timer.h"
 
 Dispatcher* g_dispatcher = NULL;
 
@@ -34,6 +35,8 @@ void Dispatcher::Dispatch()
 	int n = 0;
 	while(true)
 	{
+		TimerManager * g_timerManager = TimerManager::GetInstance();
+		g_timerManager->Tick();
 		n = epoll_wait(m_epfd, m_events, MAX_EVENT_SIZE, m_nWaitTime);
 		if(0 > n){
 			//error

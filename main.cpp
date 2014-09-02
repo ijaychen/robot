@@ -40,7 +40,7 @@ int main()
 		char clnName[128] = {0};
 		sprintf(clnName, "qaz%d", i);
 		cln[i] = new Client(L, clnName, "1");
-		cln[i]->ConnectLoginServer("127.0.0.1", server_port, server_name);
+		cln[i]->ConnectServer("127.0.0.1", server_port, server_name);
 	}
 	/*while(1){
 	WorldPacket pack_test(31, 10);

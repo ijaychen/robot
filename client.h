@@ -10,6 +10,7 @@
 #include "./utility/world_packet.h"
 #include "./utility/circular_buffer.h"
 #include "./event/dispatcher.h"
+#include "./event/timer.h"
 #include "./utility/log.h"
 #include <unistd.h>
 #include <fcntl.h>
@@ -48,13 +49,7 @@ public:
 		assert(rc != -1);
 	}
 
-	void DisConnectLoginServer()
-	{
-		close(m_socket);
-		RemoveFromDispatcher();
-	}
-
-	void ConnectLoginServer(const char * serverAddr, int nPort, const char * serverName)
+	void ConnectServer(const char * serverAddr, int nPort, const char * serverName)
 	{
 		m_socket = socket(AF_INET, SOCK_STREAM, 0);
 		assert(-1 != m_socket);
@@ -69,25 +64,8 @@ public:
 		make_fd_nonblocking(m_socket);
 		AddToDispatcher(EPOLLIN);
 		SendLoginPacket(serverName);
-
 	}
 
-	int ConnectGameServer(const char * ip, int nPort)
-	{
-		if(m_socket > 0)
-			close(m_socket);
-		m_socket = socket(AF_INET, SOCK_STREAM, 0);
-		assert(-1 != m_socket);
-		sockaddr_in saddr = {0};
-		saddr.sin_family = AF_INET;
-		saddr.sin_addr.s_addr = inet_addr(ip);
-		socklen_t len = sizeof(saddr);
-		int res = connect(m_socket, (sockaddr*)&saddr, len);
-		printf("connect gameserver res:%d, client:%s\n", res, m_accountName);
-		make_fd_nonblocking(m_socket);
-		AddToDispatcher(EPOLLIN);
-		return 1;
-	}
 
 	void SendLoginPacket(const char * serverName)
 	{
@@ -96,6 +74,31 @@ public:
 		pack.WriteString(m_accountName);
 		pack.WriteString(m_passwd);
 		SendPacket(pack);
+		
+	}
+	
+	void SendPingPacket()
+	{
+		//printf("------------=============>>>SendPingPacket\n");
+		WorldPacket pack(1, 30);
+		pack.WriteUInt(1);
+		pack.WriteUInt(0);
+		SendPacket(pack);
+		lua_getglobal(m_pLuaState, "c_move");
+		*(Client**)lua_newuserdata(m_pLuaState,sizeof(Client*)) = this;
+		luaL_getmetatable(m_pLuaState, "Client");
+		lua_setmetatable(m_pLuaState,-2);
+
+		if(lua_pcall(m_pLuaState, 1, 0, 0)){
+			printf("%s\n", lua_tostring(m_pLuaState, -1));
+		}
+	}
+	
+	void SetPingTimer()
+	{
+		TimerManager * g_TimerManager = TimerManager::GetInstance();
+		Timer * timer = new Timer(5, this, &Client::SendPingPacket);
+		g_TimerManager->InsertTimer(timer);
 	}
 	
 	void AddToDispatcher(int evt)
@@ -109,14 +112,6 @@ public:
 		assert(r == 0);
 	}
 	
-	void RemoveFromDispatcher()
-	{
-		int epfd = Dispatcher::GetInstance()->GetDispatchfd();
-		epoll_event ee;
-		ee.events = EPOLLET;
-		ee.data.ptr = this;
-		int r = epoll_ctl(epfd, EPOLL_CTL_DEL, m_socket, &ee);
-	}
 	
 	void ModifyIOEvent(int evt)
 	{	
@@ -139,6 +134,7 @@ public:
 	
 	void OnEventWriteable()
 	{
+		//printf("--------OnEventWriteable------------\n");
 		int length = m_obuf->GetLength();
 		while(0 < length)
 		{
@@ -146,7 +142,8 @@ public:
 			m_obuf->Read(tmp, length);
 			
 			int res = send(m_socket, tmp, length, 0);
-			/*for(int i = 0; i < length; ++i)
+			/*printf("---------------------send packet: res\n", res);
+			for(int i = 0; i < length; ++i)
 			{
 				printf("%d ", tmp[i]);
 			}
@@ -210,9 +207,7 @@ public:
 			}
 			if(0 == res)
 			{
-				char msg[128] = {0};
-				sprintf(msg, "server disconnected! socket:%d", m_socket);
-				debug_log(msg); 
+				printf("server disconnected! user:%s\n", GetAccountName());
 				break;
 			}
 			m_ibuf->Write(buf, res);
@@ -231,7 +226,7 @@ public:
 		luaL_getmetatable(m_pLuaState, "WorldPacket");
 		lua_setmetatable(m_pLuaState, -2);
 		if(lua_pcall(m_pLuaState, 2, 0, 0)){
-			debug_log(lua_tostring(m_pLuaState, -1), log_error);
+			printf("%s\n", lua_tostring(m_pLuaState, -1));
 		}
 	}
 	const char * GetAccountName() const 
@@ -259,16 +254,6 @@ static int LuaFClient(lua_State* L)
 	return 0;	
 }
 
-static int LuaFConnectGameServer(lua_State * L)
-{
-	Client** pClient = (Client**)luaL_checkudata(L, 1, "Client");
-	const char * ip = luaL_checkstring(L, 2);
-	int port = luaL_checknumber(L, 3);
-	int res = (*pClient)->ConnectGameServer(ip, port);
-	lua_pushnumber(L, res);
-	return 1;		
-}
-
 static int LuaFSendPacket(lua_State * L)
 {
 	Client** pClient = (Client**)luaL_checkudata(L, 1, "Client");
@@ -287,14 +272,14 @@ static int LuaFConnectServer(lua_State * L)
 	sprintf(msg, "serverIp:%s, port:%d", ip, port);
 	debug_log(msg);
 	debug_log(serverName);
-	(*pClient)->ConnectLoginServer(ip, port, serverName);
+	(*pClient)->ConnectServer(ip, port, serverName);
 	return 1;
 }
 
-static int LuaFDisConnectLoginServer(lua_State * L)
+static int LuaFSetPingTimer(lua_State * L)
 {
 	Client** pClient = (Client**)luaL_checkudata(L, 1, "Client");
-	(*pClient)->DisConnectLoginServer();
+	(*pClient)->SetPingTimer();
 }
 
 static int LuaFGetAccountName(lua_State * L)
