@@ -69,19 +69,20 @@ public:
 	}
 	
 	void Tick()
-	{
-		//printf("tick\n");
+	{		
 		std::multimap<uint32_t, Timer *>::iterator iter;
 		for(iter = m_timerList.begin(); iter!= m_timerList.end(); ++iter)
 		{
 			int curTime = time(NULL);
-			if(iter->first > curTime) return;
+			if(iter->first > curTime) {
+				return ;
+			}
 			Timer * timer = iter->second;
 			timer->Run();
 			timer->Update();
 			RemoveTimer(iter);
 			InsertTimer(timer);
-		}	
+		}
 	}
 	
 private:

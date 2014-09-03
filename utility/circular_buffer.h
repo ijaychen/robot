@@ -23,6 +23,7 @@ public:
 		int index = 0; 
 		if (m_q + l > m_max)
 		{
+			printf("write overflow\n");
 			return false; // overflow
 		}
 		m_count += (unsigned long)l;

@@ -79,7 +79,6 @@ public:
 	
 	void SendPingPacket()
 	{
-		//printf("------------=============>>>SendPingPacket\n");
 		WorldPacket pack(1, 30);
 		pack.WriteUInt(1);
 		pack.WriteUInt(0);
@@ -99,6 +98,7 @@ public:
 		TimerManager * g_TimerManager = TimerManager::GetInstance();
 		Timer * timer = new Timer(5, this, &Client::SendPingPacket);
 		g_TimerManager->InsertTimer(timer);
+		printf("------------=============>>>SetPingTimer\n");
 	}
 	
 	void AddToDispatcher(int evt)
@@ -134,7 +134,6 @@ public:
 	
 	void OnEventWriteable()
 	{
-		//printf("--------OnEventWriteable------------\n");
 		int length = m_obuf->GetLength();
 		while(0 < length)
 		{
@@ -165,14 +164,13 @@ public:
 		while(headSize <= length)
 		{
 			m_ibuf->SoftRead((char*)&m_pkHead.head, sizeof(m_pkHead));
-			uint16_t size = ntohs(m_pkHead.head.size);
+			uint16_t size = ntohs(m_pkHead.head.size) + 2;
 			char msg[256] = {0};
-			sprintf(msg, "------OnRecvPacket--SoftRead------, buf length:%d, packet size:%d\n", length, size);
+			sprintf(msg, "------OnRecvPacket--SoftRead------, buf length:%d, packet size:%d\n", length, size);			
 			debug_log(msg, log_info);
 			if(length < size)
 				break;
 			uint16_t opCode = m_pkHead.head.opCode;			
-			size += 2;
 			WorldPacket pkin(opCode, size);
 			pkin.Resize(size);
 			if(m_ibuf->Read((char*)pkin.GetBuffer(), size))
@@ -193,7 +191,6 @@ public:
 			res = recv(m_socket, buf, 1024, 0);
 			sprintf(msg, "------------------recv res:%d!", res);
 			debug_log(msg, log_info);
-			
 			if(res < 0){
 				if (errno == EAGAIN || errno == EWOULDBLOCK){
 					debug_log("recv msg finish", log_info);

@@ -52,3 +52,27 @@ local function handleHeroInfo(plr, pack)
 end
 packetHandler[opCodes.G2C_HERO_INFO] = handleHeroInfo
 
+
+local function handleEndlessParty(plr, pack)
+	local bStart = pack:ReadByte()	--开始结束标志
+	local prize = pack:ReadByte()	--能否领取标志
+	if 1 == bStart and 1 == prize then
+		local retPack = WorldPacket(opCodes.C2G_ENDLESS_PARTY_GET_PRIZE, 10)
+		plr:SendPacket(retPack)
+	end
+end
+packetHandler[opCodes.G2C_ENDLESS_PARTY_INFO] = handleEndlessParty
+
+local function handleItemUpdate(plr, pack)
+	local cnt = pack:ReadUShort()
+	local guid = pack:ReadUInt()
+	local entryId = pack:ReadUInt()
+	print(cnt, guid, entryId)
+	io.read()
+	local packet = WorldPacket(opCodes.C2G_ITEM_USE, 100)
+	packet:WriteUInt(guid)
+	packet:WriteUInt(0)
+	packet:WriteUShort(1)
+	plr:SendPacket(packet)  
+end
+packetHandler[opCodes.G2C_ITEM_UPDATE] = handleItemUpdate

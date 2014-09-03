@@ -67,6 +67,17 @@ local function handleSMsgLogin(plr, pack)
 	local time	=	pack:ReadUInt()
 	if 0 == ret then
 		plr:SetPingTimer()
+		--变身卡测试
+		--[[
+		local entryId = utils.getRandomEx(600001, 600030)
+		local str = "@give a item "..entryId.." 1"
+		print(str)
+		io.read()
+		local packet = WorldPacket(opCodes.C2G_CHANNEL_SEND, 30)
+		packet:WriteByte(3)
+		packet:WriteString(str)
+		plr:SendPacket(packet)
+		--]]
 	end
 end
 packetHandler[opCodes.SMSG_LOGIN] = handleSMsgLogin

@@ -15,7 +15,7 @@
 
 Dispatcher* g_dispatcher = NULL;
 
-Dispatcher::Dispatcher() : m_epfd(-1), m_nWaitTime(150)
+Dispatcher::Dispatcher() : m_epfd(-1), m_nWaitTime(500)
 {
 	assert(g_dispatcher == NULL);
 	m_epfd = epoll_create(9999);
