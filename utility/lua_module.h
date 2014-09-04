@@ -13,7 +13,8 @@ public:
 	}
 	virtual ~LuaRegister()
 	{
-		delete m_pObjName;
+		if(m_pObjName)
+			delete m_pObjName;
 	}
 	
 	void SetObjName(const char * objName)

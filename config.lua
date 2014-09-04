@@ -1,6 +1,6 @@
 g_serverName = "l_chenjunji"
-g_serverPort = 2736
-g_maxClient  = 100
+g_serverPort = 12736
+g_maxClient  = 50
 g_serverAdde = "127.0.0.1"
 
 --[[

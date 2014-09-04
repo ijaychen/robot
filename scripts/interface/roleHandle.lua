@@ -14,6 +14,7 @@ local function handleMapEnter(plr, pack)
 	local mapId = pack:ReadUInt()
 	local x		= pack:ReadUShort()
 	local y		= pack:ReadUShort()
+	local worldBossMap = {4009101, 4009102, 4009103, 4009104, 4009105, 4009106}
 	if mapId == 7001011 then	
 		--退出新手战斗指引
 		local packet = WorldPacket(opCodes.C2G_MAP_ENTER, 8)
@@ -76,3 +77,11 @@ local function handleItemUpdate(plr, pack)
 	plr:SendPacket(packet)  
 end
 packetHandler[opCodes.G2C_ITEM_UPDATE] = handleItemUpdate
+
+--world boss
+local function handleBossStart(plr, pack)
+	local type = pack:ReadUInt()
+	local pack = WorldPacket(opCodes.C2G_BOSS_ENTER, 10)
+	plr:SendPacket(pack)  
+end
+packetHandler[opCodes.G2C_BOSS_START] = handleBossStart

@@ -14,6 +14,8 @@ function c_procPacket(plr, pack)
 end
 
 function c_move(plr)
+	--local x = 88
+	--local y = 25
 	local x = utils.getRandomEx(5, 95);
 	local y = utils.getRandomEx(20, 27);
 	local packet = WorldPacket(opCodes.C2G_MOVE, 15)
@@ -21,4 +23,6 @@ function c_move(plr)
 	packet:WriteUShort(x)
 	packet:WriteUShort(y)
 	plr:SendPacket(packet)
+	local fightpack = WorldPacket(opCodes.C2G_FIGHT_MONSTER,10)
+	plr:SendPacket(fightpack)
 end
